@@ -20,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('users', 'UsersController');
+Route::resource('admins', 'AdminsController');
+Route::resource('courses', 'CoursesController');
+Route::resource('lessons', 'LessonsController');
