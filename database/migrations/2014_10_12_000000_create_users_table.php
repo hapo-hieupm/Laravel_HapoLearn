@@ -21,13 +21,14 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('ava')->nullable();
             $table->string('password')->nullable();
-            $table->tinyInteger('role')->unsigned();
+            $table->unsignedTinyInteger('role');
             $table->longText('description');
             $table->float('experience');
             $table->string('slack')->nullable();
             $table->string('facebook')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
