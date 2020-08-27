@@ -1,5 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');  
 
 // Variables
 @import 'variables';
@@ -15,3 +16,7 @@
 
 // AdminLTE
 @import '~admin-lte/dist/css/AdminLTE.css';
+
+@import 'style';
+
+@import 'responsive';
