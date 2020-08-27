@@ -12,7 +12,7 @@ class User extends Authenticatable
     use SoftDeletes;
 
     protected $fillable = [
-        'name', 'username', 'email', 'ava', 'password', 'role', 'description', 'experience', 'slack', 'facebook', 
+        'name', 'username', 'email', 'ava', 'password', 'role', 'description', 'experience', 'slack', 'facebook'
     ];
 
     protected $hidden = [
@@ -39,11 +39,11 @@ class User extends Authenticatable
 
     public function lessons()
     {
-    	return $this->belongstoMany('App\Model\lessons');
+        return $this->belongstoMany('App\Model\lessons');
     }
 
     public function courses()
     {
-    	return $this->belongstoMany('App\\Model\courses');
+        return $this->belongstoMany('App\\Model\courses');
     }
 }
