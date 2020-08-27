@@ -21,10 +21,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('users', 'UsersController');
+Route::resource('users', 'UserController');
 
-Route::resource('admins', 'AdminsController');
+Route::resource('admins', 'AdminController');
 
-Route::resource('courses', 'CoursesController');
+Route::resource('courses', 'CourseController');
 
-Route::resource('lessons', 'LessonsController');
+Route::resource('lessons', 'LessonController');
