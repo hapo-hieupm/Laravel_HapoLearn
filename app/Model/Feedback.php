@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Model\Subreview;
 class Feedback extends Model
 {
     use SoftDeletes;
@@ -18,6 +18,6 @@ class Feedback extends Model
 
     public function subreviews()
     {
-        return $this->hasMany('App\Model\Subreview');
+        return $this->hasMany(Subreview::class);
     }
 }
