@@ -15,4 +15,9 @@ class Tag extends Model
     protected $dates = [
         'deleted_at'
     ];
+
+    public function tags()
+    {
+        return $this->belongstoMany('App\Model\Course');
+    }
 }

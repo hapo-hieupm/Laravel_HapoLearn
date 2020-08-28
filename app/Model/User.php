@@ -29,21 +29,21 @@ class User extends Authenticatable
 
     public function feedbacks()
     {
-        return $this->hasMany(Feedback::class);
+        return $this->hasMany('App\Model\Feedback');
     }
 
     public function subreviews()
     {
-        return $this->hasMany(Subreview::class);
+        return $this->hasMany('App\Model\Subreview');
     }
 
     public function lessons()
     {
-        return $this->belongstoMany('App\Model\lessons');
+        return $this->belongstoMany('App\Model\Lesson');
     }
 
     public function courses()
     {
-        return $this->belongstoMany('App\\Model\courses');
+        return $this->belongstoMany('App\Model\Course');
     }
 }

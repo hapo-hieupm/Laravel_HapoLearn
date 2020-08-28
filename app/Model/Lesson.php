@@ -18,6 +18,11 @@ class Lesson extends Model
 
     public function media()
     {
-        return $this->hasMany(Media::class);
+        return $this->hasMany('App\Model\Media');
+    }
+
+    public function courses()
+    {
+        return $this->belongstoMany('App\Model\User');
     }
 }
