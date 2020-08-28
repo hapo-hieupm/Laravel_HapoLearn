@@ -1,7 +1,7 @@
 <footer class="d-flex flex-column">
     <div class="div-content-grey d-flex flex-md-nowrap flex-wrap justify-content-md-around pt-md-5 pt-3 pb-5 pl-md-0 pl-2 px-xl-5">
         <div class="col-md-4 col-7 d-flex flex-column order-md-0 order-1 text medium align-items-xl-center pl-xl-3 pl-md-4 ml-md-0 pl-4 pr-0">
-            <img alt="HapoLearn" class="img-hapo-learn" src="image/hapo_learn_white.png">
+            <img alt="HapoLearn" class="img-hapo-learn" src="{{ asset('storage/images/hapo_learn_white.png') }}">
             <div class="text ml-xl-5 pl-xl-5 mt-xl-2 mt-3">Interactive lessons, "on-the-go"<br>
             practice, peer support.
             </div>
@@ -37,18 +37,18 @@
             <ul class="d-flex pl-0">
                 <li>
                     <a>
-                        <img alt="fb" class="link-img" src="image/fb.png" data-toggle="tooltip" data-placement="bottom" href="#" title="facebook.com/tuyen.dung.haposoft">
+                        <img alt="fb" class="link-img" src="{{ asset('storage/images/fb.png') }}" data-toggle="tooltip" data-placement="bottom" href="#" title="facebook.com/tuyen.dung.haposoft">
                     </a>
                 </li>
                 <li class="mx-4">
                     <a>
-                        <img alt="phone" class="link-img" src="image/phone.png" data-toggle="tooltip" data-placement="bottom" href="#" title="+84-85-645-9898">
+                        <img alt="phone" class="link-img" src="{{ asset('storage/images/phone.png') }}" data-toggle="tooltip" data-placement="bottom" href="#" title="+84-85-645-9898">
                     </a>
                 </li>
                 <li style="list-style: none"></li>
                 <li>
                     <a >
-                    <img alt="email" class="link-img" src="image/email.png" class="d-flex align-items-end" data-placement="bottom" data-toggle="tooltip" href="#" title=
+                    <img alt="email" class="link-img" src="{{ asset('storage/images/email.png') }}" class="d-flex align-items-end" data-placement="bottom" data-toggle="tooltip" href="#" title=
                     "info@haposoft.com">
                     </a>
                 </li>

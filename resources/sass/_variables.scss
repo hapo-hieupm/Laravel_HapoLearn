@@ -25,7 +25,7 @@ $link_color: #90AB26;
 
 @font-face {
   font-family: 'UTM BryantLG';
-  src: url('../storage/fonts/UTM_BryantLG.ttf');
+  src: url('../../storage/app/public/fonts/UTM_BryantLG.ttf');
 }
 
 @mixin text($font, $color) {
