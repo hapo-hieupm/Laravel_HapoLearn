@@ -18,16 +18,21 @@ class Course extends Model
 
     public function lessons()
     {
-        return $this->hasMany(Lesson::class);
+        return $this->hasMany('App\Model\Lesson');
     }
 
     public function feedbacks()
     {
-        return $this->hasMany(Feedback::class);
+        return $this->hasMany('App\Model\Feedback');
     }
 
     public function tags()
     {
-        return $this->belongstoMany('App\\Model\tags');
+        return $this->belongstoMany('App\Model\Tag');
+    }
+
+    public function users()
+    {
+        return $this->belongstoMany('App\Model\User');
     }
 }
