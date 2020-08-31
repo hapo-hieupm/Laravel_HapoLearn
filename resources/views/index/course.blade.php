@@ -2,7 +2,7 @@
     <div class="card-deck container d-flex flex-md-row flex-column justify-content-md-center align-items-md-center align-items-start p-md-0 p-5">
         <div class="card col-md-4 p-0 my-3">
             <div class="card-img-top d-flex img-bg left">
-                <img alt="html-css" class="m-auto img-html-css" src="i{{ asset('storage/images/html_css.png') }}">
+                <img alt="html-css" class="m-auto img-html-css" src="{{ asset('storage/images/html_css.png') }}">
             </div>
             <div class="card-body d-flex flex-column px-md-2">
                 <p class="card-title text-big">HTML/CSS/js Tutorial</p>
