@@ -38,7 +38,8 @@ class AlterTableUsers extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['name', 'username', 'email', 'ava', 'password', 'role', 'description', 'experience', 'slack', 'facebook']);
+            $table->dropColumn(['name', 'username', 'email', 'ava', 'password', 'role', 'description',
+                                'experience', 'slack', 'facebook']);
         });
     }
 }
