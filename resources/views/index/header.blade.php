@@ -17,7 +17,7 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">All Courses</a>
+                    <a class="nav-link" href="http://127.0.0.1:8000/course">All Courses</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">List Lesson</a>

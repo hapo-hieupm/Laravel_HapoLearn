@@ -17,14 +17,16 @@
                 @foreach($courses as $course)
                 <div class="col-6 d-flex flex-column">
                     <div class="d-flex">
-                        <img src="{{ ($course->ava == null) ? asset('storage/ava_courses/php.png') : asset('/storage/ava_courses/' . $course->ava) }} }}">
+                        <img src="{{ ($course->ava == null) ? asset('storage/ava_courses/php.png') : asset('/storage/ava_courses/' . $course->ava) }}">
                         <div class="d-flex flex-column">
-                            <div class="course-title">{{ $course->name }}</div>
+                            <div>
+                                <a class="course-title" href="#">{{ $course->name }}</a>
+                            </div>
                             <div class="txt-descript">{{ $course->description }}</div>
                         </div>
                     </div>
-                    <div class="button">
-                        More 
+                    <div>
+                        <a class="button" href="#">More</a>
                     </div>
                     <hr>
                     <div class="d-flex">
@@ -42,6 +44,7 @@
                         </div>
                     </div>        
                 </div>
+                @endforeach
             </div>
         </div>
         {!! $courses->links() !!}

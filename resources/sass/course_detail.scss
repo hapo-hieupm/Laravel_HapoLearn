@@ -1,0 +1,82 @@
+.course_detail {
+  .txt-path {
+    background: #E9E7E7;
+    letter-spacing: -0.02em;
+    @include text(16px/20px 'UTM BryantLG', $primary_text_color);
+  }
+
+  hr {
+    border: 1px solid $primary_color;
+  }
+
+  .course_title {
+    letter-spacing: -0.02em;
+    -webkit-text-stroke: 0.5px $primary_text_color;
+    @include text(bold 25px/31px 'UTM BryantLG', $primary_text_color);
+  }
+
+  .descript {
+    text-align: justify;
+    letter-spacing: -0.02em;
+    @include text(bold 18px/26px 'UTM BryantLG', #949292);
+  }
+
+  .paremeter {
+    color: #BDB9B9;
+
+    .fa {
+      letter-spacing: -0.05em;
+      font-size: 35px;
+      line-height: 40px;
+    }
+
+    .fa-users {
+      font-size: 32px;
+      line-height: 37px;
+    }
+
+    .txt {
+      letter-spacing: -0.02em;
+      font: 25px/31px 'UTM BryantLG';
+    }
+
+    .txt-data {
+      @extend .txt;
+      font-weight: bold;
+    }
+
+    .tag {
+      color: #5D8BD0;
+    }
+  }
+
+  .other-course {
+    thead {
+      background: #B2D235;
+      border: 1px solid #DEDEDE;
+      letter-spacing: -0.05em;
+      -webkit-text-stroke: 0.3px #FFFFFF;
+      @include text (bold 25px/31px 'UTM BryantLG', #FFFFFF);
+    }
+
+    .txt-body {
+      letter-spacing: -0.02em;
+      @include text (bold 16px/20px 'UTM BryantLG', $primary_text_color);
+    }
+
+    .txt-body:hover {
+      color: $primary_color;
+    }
+
+    .button {
+      letter-spacing: -0.05em;
+      -webkit-text-stroke: 0.3px #FFFFFF;
+      @include text (bold 18px/22px 'UTM BryantLG', #FFFFFF);
+      @include primaryBtn($primary_color, 0.25rem 0.5rem, inset 0px 1.5px 2px #6F8710, 22px);
+    }
+
+    .button:hover {
+      font-size: 20px;
+    }
+  }
+}
