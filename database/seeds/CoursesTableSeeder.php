@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\User;
+use App\Model\Course;
 
-class UsersTableSeeder extends Seeder
+class CoursesTableSeeder extends Seeder
 {
     public function run()
     {
@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
             DB::table('courses')->insert([
                 'name' => $courses[i],
                 'description' => 'I knew hardly anything about HTML, JS, and CSS before entering New Media. I had coded quite a bit, but never touched anything in regards to web development.',
-                'price' => '100'
+                'price' => '100',
             ]);
         }       
     }

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\User;
+use App\Model\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -27,6 +27,15 @@ class UsersTableSeeder extends Seeder
                 'password' => '1234abcd',
                 'username'=> 'username'.Str::random(5),
             ]);
+
+            if ($i==1) {
+                DB::table('users')->insert([
+                    'description' => 'Vivamus volutpat eros pulvinar velit laoreet, sit amet egestas erat dignissim. Sed quis rutrum tellus, sit amet viverra felis. Cras sagittis sem sit amet urna feugiat rutrum. Nam nulla ipsum, venenatis malesuada felis quis, ultricies convallis neque. Pellentesque tristique', 
+                    'experience' => random_int(1,5),
+                    'slack' => 'hapo@slack.com',
+                    'facebook'=> 'hapo@facebook.com',
+                ]);
+            }
         }
     }
 }
