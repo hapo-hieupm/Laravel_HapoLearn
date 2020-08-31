@@ -16,20 +16,22 @@ class UsersTableSeeder extends Seeder
             'name' => 'Hapo Tester',
             'username' => 'Hapo_Tester',
             'email' => 'test@haposoft.com',
-            'password' => bcrypt('12345678')
+            'password' => bcrypt('12345678'),
+            'role' => '1';
         ]);
 
         $limit = 5;
         for ($i = 0; $i < $limit; $i++) {
-            DB::table('users')->insert([
+            User::create([
                 'name' => 'name '.Str::random(5),
                 'email' => 'email'.Str::random(5).'@gmail.com',
                 'password' => '1234abcd',
                 'username'=> 'username'.Str::random(5),
+                'role' => random_int(0,1),
             ]);
 
-            if ($i==1) {
-                DB::table('users')->insert([
+            if (User:) {
+                User::create([
                     'description' => 'Vivamus volutpat eros pulvinar velit laoreet, sit amet egestas erat dignissim. Sed quis rutrum tellus, sit amet viverra felis. Cras sagittis sem sit amet urna feugiat rutrum. Nam nulla ipsum, venenatis malesuada felis quis, ultricies convallis neque. Pellentesque tristique', 
                     'experience' => random_int(1,5),
                     'slack' => 'hapo@slack.com',
