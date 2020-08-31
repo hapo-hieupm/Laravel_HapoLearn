@@ -3,7 +3,6 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-
 use App\Model\Lesson;
 use App\Model\Feedback;
 use App\Model\Tag;
