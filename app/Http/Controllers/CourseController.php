@@ -2,19 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
-
+use App\Model\Course;
 use App\Http\Requests\CoursesRequest;
-
 use Illuminate\Support\Facades\Storage;
-
 use Illuminate\Support\Facades\DB;
-
 use Session;
-
-use App\Enums\Gender;
-
-use BenSampo\Enum\Rules\EnumValue;
 
 class CoursesController extends Controller
 {
@@ -41,7 +33,7 @@ class CoursesController extends Controller
             $allRequest['ava'] = $imageName;
         }
         Course::create($allRequest);
-        return redirect('/courses')->with('notice', __('notice.success.store'));
+        return redirect()->route('courses')->with('notice', __('notice.success.store'));
     }
 
     
@@ -63,7 +55,7 @@ class CoursesController extends Controller
             $Course['ava'] = $ava;
         }
         Course::findOrFail($id)->update($Course);
-        return redirect('/courses')->with('notice', __('notice.success.update'));
+        return redirect()->route('courses')->with('notice', __('notice.success.update'));
     }
 
     
@@ -71,6 +63,6 @@ class CoursesController extends Controller
     {
         $Course = Course::find($id);
         $Course->delete();
-        return redirect('/courses')->with('notice', __('notice.success.delete'));
+        return redirect()->route('courses')->with('notice', __('notice.success.delete'));
     }
 }

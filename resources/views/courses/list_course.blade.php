@@ -18,7 +18,7 @@
                     <hr>
                     <div class="d-flex">
                         <div class="d-flex flex-column">
-                            <div class="">Learners</div>
+                            <div class="txt-title">Learners</div>
                             <div class="txt-number">{{ $course->numOfStudents() }}</div>
                         </div>
                         <div class="d-flex flex-column">
@@ -33,6 +33,6 @@
                 </div>
             </div>
         </div>
-        {!! $courses->render() !!}
+        {!! $courses->links() !!}
     @endif
 @endsection

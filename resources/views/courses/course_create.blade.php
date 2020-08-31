@@ -2,9 +2,9 @@
 @section('contain')
 <div class="row">
     <div class="col-sm-8 offset-sm-2">
-        <h1 class="display-3">Add a users</h1>
+        <h1 class="display-3">Add a courses</h1>
         <div>
-            <form method="post" action="{{ route('users.store') }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('courses.store') }}" enctype="multipart/form-data">
             @csrf
                 <div class="form-group">    
                     <label for="name">Name:</label>
@@ -46,7 +46,7 @@
                         </ul>
                     </div><br/>
                 @endif
-                <button type="submit" class="btn btn-primary">Add users</button>
+                <button type="submit" class="btn btn-primary">Add courses</button>
             </form>
         </div>
     </div>

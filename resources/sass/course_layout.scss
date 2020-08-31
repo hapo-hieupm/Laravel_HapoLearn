@@ -1,5 +1,5 @@
 .list_course {
-  .txt-title {
+  .course-title {
     letter-spacing: -0.05em;
     -webkit-text-stroke: 0.3px $pri_text_color;
     @include txt(bold 25px/31px 'UTM BryantLG', $pri_text_color);
@@ -20,5 +20,16 @@
     -webkit-text-stroke: 0.3px #FFFFFF;
     @include txt (bold 18px/22px 'UTM BryantLG', #FFFFFF);
     @include primaryBtn($primary_color, 0.5rem 1rem, inset 0px 1.5px 2px #6F8710, 22px);
+  }
+
+  .txt-title {
+    @extend .course-title;
+    -webkit-text-stroke: 0;
+  }
+
+  .txt-number {
+    letter-spacing: -0.05em;
+    -webkit-text-stroke: 1px $primary_color;
+    @include txt(bold 30px/37px 'UTM BryantLG', $primary_color)
   }
 }
