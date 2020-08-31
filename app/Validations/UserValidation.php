@@ -14,10 +14,10 @@ class UserValidation extends FormRequest
     public function rules()
     { 
         return [
-            'name'=>'required',
-            'email'=>'required|email|unique:users,email,' . $this->user, 
-            'username'=>'required|unique:users,username,' . $this->user, 
-            'password'=>'required|min:8',
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . $this->user, 
+            'username' => 'required|unique:users,username,' . $this->user, 
+            'password' => 'required|min:8',
             'phone' => 'numeric',
             'ava' => 'image',
         ];
