@@ -1,8 +1,10 @@
 <?php
 
-namespace App;
+
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Model\Course;
 
 class Tag extends Model
 {
@@ -15,4 +17,9 @@ class Tag extends Model
     protected $dates = [
         'deleted_at'
     ];
+
+    public function courses()
+    {
+        return $this->belongstoMany(Course::class);
+    }
 }

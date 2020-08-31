@@ -1,15 +1,16 @@
 <?php
 
-namespace App;
+namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Model\Media;
 
 class Lesson extends Model
 {
     use SoftDeletes;
 
     protected $fillable = [
-        'course_id', 'description', 'requirement', 'time',
+        'course_id', 'name', 'description', 'requirement', 'time',
     ];
 
     protected $dates = [

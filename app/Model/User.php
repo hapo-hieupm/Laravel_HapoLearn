@@ -5,6 +5,10 @@ namespace App\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Model\Feedback;
+use App\Model\Subreview;
+use App\Model\Lesson;
+use App\Model\Course;
 
 class User extends Authenticatable
 {
@@ -39,11 +43,11 @@ class User extends Authenticatable
 
     public function lessons()
     {
-        return $this->belongstoMany('App\Model\lessons');
+        return $this->belongstoMany(Lesson::class);
     }
 
     public function courses()
     {
-        return $this->belongstoMany('App\\Model\courses');
+        return $this->belongstoMany(Course::class);
     }
 }
