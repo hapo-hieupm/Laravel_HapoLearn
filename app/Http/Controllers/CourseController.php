@@ -6,6 +6,7 @@ use App\Model\Course;
 use App\Http\Requests\CoursesRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 use Session;
 
 class CoursesController extends Controller
@@ -14,6 +15,16 @@ class CoursesController extends Controller
     {   
         $courses = Course::paginate(config('pagination.course'));
         return view('courses.list_course', compact('courses'));
+    }
+
+    public function search() {
+        $q = Input::get ( 'q' );
+        $courses = Course::where('name','LIKE','%'.$q.'%')
+                        ->orwhere('description', 'LIKE', '%'.$key.'%')
+                        ->paginate(config('pagination.course'));
+        if(count($course) > 0)
+            return view('courses.list_course', compact('courses'))->withDetails($course)->withQuery ( $q );
+            else return view('courses.list_course', compact('courses'))->withMessage('notice', __('notice.failed.search'));
     }
 
     public function create()
