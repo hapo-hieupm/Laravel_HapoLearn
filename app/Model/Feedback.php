@@ -4,6 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Model\Subreview;
+
 class Feedback extends Model
 {
     use SoftDeletes;
