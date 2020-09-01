@@ -53280,6 +53280,10 @@ h3 {
   font-family: "UTM BryantLG";
   src: url("../storage/fonts/UTM_BryantLG.ttf");
 }
+@font-face {
+  font-family: "UTM BryantLG";
+  src: url("../storage/fonts/UTM_BryantLG.ttf");
+}
 * {
   list-style-type: none;
   list-style: none;
@@ -53507,7 +53511,7 @@ header .img-logo {
 }
 
 .why-hapo {
-  background: url("../../storage/images/nen_den.jpeg") no-repeat center/cover;
+  background: url("../storage/images/nen_den.jpeg") no-repeat center/cover;
 }
 .why-hapo .text-big {
   margin-top: -5rem;
@@ -53604,7 +53608,7 @@ header .img-logo {
 
 .join-banner {
   margin-top: 8rem;
-  background: url("../../storage/images/nen_xanh_hoa_tiet.png") no-repeat center/cover;
+  background: url("../storage/images/nen_xanh_hoa_tiet.png") no-repeat center/cover;
 }
 .join-banner .text {
   text-align: center;
@@ -53875,10 +53879,6 @@ footer .div-content-back {
   font-size: 20px;
 }
 
-@font-face {
-  font-family: "UTM BryantLG";
-  src: url("../storage/fonts/UTM_BryantLG.ttf");
-}
 @media only screen and (max-width: 768px) {
   header .img-logo {
     width: 300px;
