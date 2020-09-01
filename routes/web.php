@@ -14,13 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('courses.list_course');
+    return view('index');
 });
 
 Auth::routes();
 
-Route::resource('users', 'UserController');
+Route::resources([
+    // 'users' => 'UserController',
+    'courses' => 'CourseController',
+    // 'lessons' => 'LessonController'
+    ]);
 
-Route::resource('courses', 'CourseController');
-
-Route::resource('lessons', 'LessonController');
+Route::post('/courses/search','CourseController@search')->name('courses.search');

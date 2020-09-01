@@ -10773,13 +10773,33 @@ footer .div-content-back {
     margin-top: -9.25rem;
   }
 }
+@font-face {
+  font-family: "UTM BryantLG";
+  src: url("../../storage/app/public/fonts/UTM_BryantLG.ttf");
+}
+* {
+  list-style-type: none;
+  list-style: none;
+}
+* a {
+  text-decoration: none;
+}
+* img {
+  width: 100%;
+}
+
 .list_course .course-title, .list_course .text-title {
   letter-spacing: -0.05em;
   -webkit-text-stroke: 0.3px #505353;
   font: bold 25px/31px "UTM BryantLG";
   color: #505353 !important;
 }
-.list_course .text-descript {
+.list_course .ava {
+  width: 89px;
+  height: 89px;
+  border-radius: 80px;
+}
+.list_course .txt-descript {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -10802,6 +10822,9 @@ footer .div-content-back {
   transition: 0s;
   text-align: center;
 }
+.list_course hr {
+  border: 1px solid #F1F1F1;
+}
 .list_course .text-title {
   -webkit-text-stroke: 0;
 }
@@ -10810,6 +10833,86 @@ footer .div-content-back {
   -webkit-text-stroke: 1px #B2D235;
   font: bold 30px/37px "UTM BryantLG";
   color: #B2D235 !important;
+}
+
+@font-face {
+  font-family: "UTM BryantLG";
+  src: url("../../storage/app/public/fonts/UTM_BryantLG.ttf");
+}
+.course_detail .txt-path {
+  background: #E9E7E7;
+  letter-spacing: -0.02em;
+  font: 16px/20px "UTM BryantLG";
+  color: #505353 !important;
+}
+.course_detail hr {
+  border: 1px solid #B2D235;
+}
+.course_detail .course_title {
+  letter-spacing: -0.02em;
+  -webkit-text-stroke: 0.5px #505353;
+  font: bold 25px/31px "UTM BryantLG";
+  color: #505353 !important;
+}
+.course_detail .descript {
+  text-align: justify;
+  letter-spacing: -0.02em;
+  font: bold 18px/26px "UTM BryantLG";
+  color: #949292 !important;
+}
+.course_detail .paremeter {
+  color: #BDB9B9;
+}
+.course_detail .paremeter .fa {
+  letter-spacing: -0.05em;
+  font-size: 35px;
+  line-height: 40px;
+}
+.course_detail .paremeter .fa-users {
+  font-size: 32px;
+  line-height: 37px;
+}
+.course_detail .paremeter .txt, .course_detail .paremeter .txt-data {
+  letter-spacing: -0.02em;
+  font: 25px/31px "UTM BryantLG";
+}
+.course_detail .paremeter .txt-data {
+  font-weight: bold;
+}
+.course_detail .paremeter .tag {
+  color: #5D8BD0;
+}
+.course_detail .other-course thead {
+  background: #B2D235;
+  border: 1px solid #DEDEDE;
+  letter-spacing: -0.05em;
+  -webkit-text-stroke: 0.3px #FFFFFF;
+  font: bold 25px/31px "UTM BryantLG";
+  color: #FFFFFF !important;
+}
+.course_detail .other-course .txt-body {
+  letter-spacing: -0.02em;
+  font: bold 16px/20px "UTM BryantLG";
+  color: #505353 !important;
+}
+.course_detail .other-course .txt-body:hover {
+  color: #B2D235;
+}
+.course_detail .other-course .button {
+  letter-spacing: -0.05em;
+  -webkit-text-stroke: 0.3px #FFFFFF;
+  font: bold 18px/22px "UTM BryantLG";
+  color: #FFFFFF !important;
+  text-decoration: none;
+  background-color: #B2D235 !important;
+  padding: 0.25rem 0.5rem !important;
+  box-shadow: inset 0px 1.5px 2px #6F8710;
+  border-radius: 22px;
+  transition: 0s;
+  text-align: center;
+}
+.course_detail .other-course .button:hover {
+  font-size: 20px;
 }
 
 @media only screen and (max-width: 768px) {

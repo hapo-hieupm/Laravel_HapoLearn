@@ -14,10 +14,10 @@
         <div class="col-xl-8 col-12 collapse navbar-collapse p-0" id="navbarNav">
             <ul class="col-12 d-flex justify-content-xl-end justify-content-md-between navbar-nav pl-3">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://127.0.0.1:8000/course">All Courses</a>
+                    <a class="nav-link" href="courses">All Courses</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">List Lesson</a>

@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace app\Http\Controllers;
 
 use App\Model\Course;
-use App\Http\Requests\CoursesRequest;
+use App\Http\Validations\CourseValidation;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Input;
 use Session;
 
-class CoursesController extends Controller
+class CourseController extends Controller
 {
     public function index()
     {   
@@ -17,14 +16,14 @@ class CoursesController extends Controller
         return view('courses.list_course', compact('courses'));
     }
 
-    public function search() {
-        $q = Input::get ( 'q' );
+    public function search(CourseValidation $request) {
+        $q = $request->all();
         $courses = Course::where('name','LIKE','%'.$q.'%')
                         ->orwhere('description', 'LIKE', '%'.$key.'%')
                         ->paginate(config('pagination.course'));
         if(count($course) > 0)
             return view('courses.list_course', compact('courses'))->withDetails($course)->withQuery ( $q );
-            else return view('courses.list_course', compact('courses'))->withMessage('notice', __('notice.failed.search'));
+        else return view('courses.list_course', compact('courses'))->withMessage('notice', __('notice.failed.search'));
     }
 
     public function create()
@@ -32,7 +31,7 @@ class CoursesController extends Controller
         return view('courses.create');
     }
 
-    public function store(CoursesRequest $request)
+    public function store(CourseValidation $request)
     {   
         $allRequest  = $request->all();
         if($request->hasFile('ava')) {
@@ -54,7 +53,7 @@ class CoursesController extends Controller
         return view('courses.edit', compact('Course'));   
     }
 
-    public function update(CoursesRequest $request, $id)
+    public function update(CourseValidation $request, $id)
     {
         $Course = $request->all();
         if ($request->hasFile('ava')) {

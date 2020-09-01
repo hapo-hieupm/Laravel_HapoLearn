@@ -1,8 +1,10 @@
+@import 'variables';
+
 .course_detail {
   .txt-path {
     background: #E9E7E7;
     letter-spacing: -0.02em;
-    @include text(16px/20px 'UTM BryantLG', $primary_text_color);
+    @include text(16px/20px 'UTM BryantLG', $pri_text_color);
   }
 
   hr {
@@ -11,8 +13,8 @@
 
   .course_title {
     letter-spacing: -0.02em;
-    -webkit-text-stroke: 0.5px $primary_text_color;
-    @include text(bold 25px/31px 'UTM BryantLG', $primary_text_color);
+    -webkit-text-stroke: 0.5px $pri_text_color;
+    @include text(bold 25px/31px 'UTM BryantLG', $pri_text_color);
   }
 
   .descript {
@@ -61,7 +63,7 @@
 
     .txt-body {
       letter-spacing: -0.02em;
-      @include text (bold 16px/20px 'UTM BryantLG', $primary_text_color);
+      @include text (bold 16px/20px 'UTM BryantLG', $pri_text_color);
     }
 
     .txt-body:hover {
