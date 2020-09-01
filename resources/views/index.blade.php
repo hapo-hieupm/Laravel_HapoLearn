@@ -1,0 +1,10 @@
+@extends('layouts.layout')
+@section('content')
+    @include('layouts.banner')
+    @include('layouts.course')
+    @include('layouts.other_course')
+    @include('layouts.why_hapo')
+    @include('layouts.feedback')
+    @include('layouts.join_banner')
+    @include('layouts.statistic')
+@endsection

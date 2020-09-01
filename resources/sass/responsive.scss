@@ -1,0 +1,419 @@
+@media only screen and (max-width: 768px) {
+  header {
+    .img-logo {
+      width: 300px;
+      height: 61.74px;
+    }
+  }
+
+  .banner {
+    height: 350px;
+
+    ul {
+      margin: -10% 0 0 -1%;
+    }
+
+    .title,
+    .title.medium {
+      font-size: 30px;
+      line-height: 37px;
+    }
+
+    .text,
+    .text-btn {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .text-btn {
+      padding: 7px 27px !important;
+      box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.25);
+
+      &:hover {
+        font-size: 17px;
+        padding: 8px 27px !important;
+        box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    .img-cu {
+      width: 29px;
+      height: 26px;
+    }
+  }
+
+  .bg-grey-gradient {
+    height: 28.75rem;
+  }
+
+  .other-course,
+  .course {    
+    .text-big {
+      font-size: 20px;
+      line-height: 25px;
+    }
+    
+    .text-small {
+      line-height: 18px;
+    }
+    
+    .button {
+      font-size: 10px;
+      line-height: 12px;
+      
+      &:hover {
+        font-size: 11px;
+      }
+    }
+  }
+
+  .course {
+    margin-top: -6rem;
+
+    .card {
+      height: 90%;
+    }
+
+    .img-bg {
+      height: 40%;
+    }
+  }
+  
+  .feedback,
+  .statistic,
+  .other-course {
+    .text-title {
+      font-size: 50px;
+      line-height: 61px;
+      border-width: 4px;
+    }
+  }
+  
+  .card {
+    margin: 0 0.5% !important;
+  }
+
+  .other-course {
+    .text-link {
+      font-size: 28px;
+      line-height: 34px;
+      -webkit-text-stroke: 0.75px $link_color;
+      
+      &:hover {
+        font-size: 30px;
+        -webkit-text-stroke: 1px $link_color;
+      }
+    }
+  }
+
+  .join-banner {
+    .text {
+      font-size: 35px;
+      line-height: 43px;
+    }
+    
+    .button {
+      font-size: 20px;
+      line-height: 25px;
+
+      &:hover {
+        font-size: 22px;
+      }
+    }
+  }
+
+  .statistic {
+    .text-medium {
+      font-size: 40px;
+      line-height: 49px;
+    }
+  }
+
+  footer {
+    .text {
+      font-size: 18px;
+      line-height: 22px;
+    
+      &.big {
+        font-size: 18px;
+      }
+      
+      &.medium {
+        font-size: 16px;
+        line-height: 20px;
+      }  
+    }
+    
+    .img-hapo-learn {
+      width: 170px;
+      height: 35.38px;
+    }
+    
+    .link-img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .why-hapo {
+    .text-big {
+      margin-top: 0;
+      font-size: 50px;
+      line-height: 61px;
+      text-align: center;
+    }
+    
+    .text-ul {
+      font-size: 16px;
+      line-height: 20px;
+      i {
+        font-size: 19px;
+      }
+    }
+    
+    .img-rotate-computer {
+      width: 271.81px;
+      height: 271.81px;
+      margin: -9rem 0 0 -5rem;
+    }
+    
+    .img-computer {
+      margin-top: -3.25rem;
+      padding: 5% 1%;
+    }
+  }
+
+  .feedback {
+    .text-slogan {
+      font-size: 18px;
+      line-height: 22px;
+    }
+    
+    .next {
+      margin-top: -9rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  header {
+    .img-logo {
+      margin-left: -11%;
+      width: 150px;
+      height: 30px;
+    }
+    
+    .nav-link {
+      font-size: 16px;
+      line-height: 22px;
+
+      &:hover {
+        color: $primary_color !important;
+        font-size: 18px;
+        @include primaryBtn(#FFFFFF, 10px 12px, none, 17px);
+      }
+    }
+  }
+  
+  .banner { 
+    background-size: 115% 50%;
+    background-position: right top;
+
+    ul {
+      margin: 59% 0 0 4%;
+    }
+
+    .title,
+    .title.medium {
+      font-size: 25px;
+      line-height: 31px;
+    }
+
+    .text {
+      margin-top: 3%;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .text-btn {
+      margin-top: 1%;
+      margin-left: -2%;
+      font-size: 18px;
+      line-height: 22px;
+      padding: 8px 55px !important;
+      box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.25);
+
+      &:hover {
+        font-size: 19px;
+        padding: 7px 55px !important;
+        box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    .img-cu {
+      width: 29px;
+      height: 26px;
+    }
+  }
+
+  .bg-grey-gradient {
+    height: 33.5rem;
+  }
+
+  .other-course,
+  .course {
+    .text-big {
+      font-size: 20px;
+      line-height: 25px;
+    }
+    
+    .button {
+      font-size: 18px;
+      line-height: 22px;
+      padding: 0.75rem 0 !important;
+      
+      &:hover {
+        font-size: 19px;
+      }
+    }
+  }
+  
+  .course {
+    margin-top: -10rem;
+
+    .img-bg {
+      height: 45%;
+    }
+  }
+  
+  .feedback,
+  .statistic,
+  .other-course {
+    .text-title {
+      font-size: 40px;
+      line-height: 49px;
+      -webkit-text-stroke: 0.75px #11114E;
+      border-width: 3px;
+    }
+  }
+  
+  .other-course {
+    .text-link {
+      font-size: 22px;
+      line-height: 27px;
+      -webkit-text-stroke: 0.5px $link_color;
+      
+      &:hover {
+        font-size: 24px;
+        -webkit-text-stroke: 0.75px $link_color;
+      }
+    }
+  }
+
+  .join-banner {
+    .text {
+      font-size: 23px;
+      line-height: 28px;
+    }
+    
+    .button {
+      font-size: 18px;
+      line-height: 22px;
+      
+      &:hover {
+        font-size: 20px;
+      }
+    }
+  }
+  
+  footer {
+    .text {
+      font-size: 17px;
+      line-height: 21px; 
+
+      &.big {
+        font-size: 17px;
+      }
+      
+      &.medium {
+        font-size: 14px;
+        line-height: 17px;
+      }
+      
+    }
+    
+    .img-hapo-learn {
+      width: 150px;
+      height: 30.86px;
+    }
+    
+    .link-img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .why-hapo {
+    .text-big {
+      margin: 1rem 0 0 -1rem;
+      text-align: left;
+      font-size: 40px;
+      line-height: 40px;
+    }
+    
+    .text-ul {
+      letter-spacing: 0;
+      font-size: 14px;
+      line-height: 17px;
+
+      i {
+        font-size: 16px;
+      }
+    }
+    
+    .img-rotate-computer {
+      width: 226.43px;
+      height: 226.43px;
+      margin: -6rem 0 0 -4.5rem;
+    }
+    
+    .img-computer {
+      padding: 9% 1% 1%;
+    }
+  }
+
+  .feedback {
+    .text-slogan {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    
+    .textbox {
+      .text {
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+    
+    .user {
+      .ava {
+        width: 45px;
+        height: 45px;
+      }
+      
+      .text-user-name {
+        font-size: 16px;
+        line-height: 20px;
+      }
+      
+      .text-course-name {
+        font-size: 14px;
+        line-height: 17px;
+      }
+    }
+    
+    .next {
+      margin-top: -9.25rem;
+    }
+  }
+}

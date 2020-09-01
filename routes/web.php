@@ -20,3 +20,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('users', 'UserController');
+
+Route::resource('admins', 'AdminController');
+
+Route::resource('courses', 'CourseController');
+
+Route::resource('lessons', 'LessonController');
