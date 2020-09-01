@@ -77,7 +77,7 @@
         </div>
     </div>
     <div class="col-12 next d-flex justify-content-between position-relative p-0 mb-xl-5">
-        <a class="left ml-2"><i class="fas fa-angle-left"></i></a> 
-        <a class="right mr-2"><i class="fas fa-angle-right"></i></a>
+        <a class="left ml-2"><i class="fa fa-angle-left"></i></a> 
+        <a class="right mr-2"><i class="fa fa-angle-right"></i></a>
     </div>
 </section>

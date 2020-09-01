@@ -29,5 +29,5 @@
         </div>
     </div> 
     </div>
-    <img alt="messenge" class="mess-btn" src="{{ asset('storage/images/m.png' }}">
+    <img alt="messenge" class="mess-btn" src="{{ asset('storage/images/m.png') }}">
 </section>
