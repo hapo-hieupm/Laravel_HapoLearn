@@ -11,19 +11,21 @@ use Session;
 class CourseController extends Controller
 {
     public function index()
-    {   
+    {
         $courses = Course::paginate(config('pagination.course'));
         return view('courses.list_course', compact('courses'));
     }
 
-    public function search(CourseValidation $request) {
+    public function search(CourseValidation $request) 
+    {
         $q = $request->all();
-        $courses = Course::where('name','LIKE','%'.$q.'%')
+        $courses = Course::where('name', 'LIKE', '%'.$q.'%')
                         ->orwhere('description', 'LIKE', '%'.$key.'%')
                         ->paginate(config('pagination.course'));
-        if(count($course) > 0)
+        if (count($course) > 0)
             return view('courses.list_course', compact('courses'))->withDetails($course)->withQuery ( $q );
-        else return view('courses.list_course', compact('courses'))->withMessage('notice', __('notice.failed.search'));
+        else 
+            return view('courses.list_course', compact('courses'))->withMessage('notice', __('notice.failed.search'));
     }
 
     public function create()

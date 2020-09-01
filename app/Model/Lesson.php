@@ -20,6 +20,6 @@ class Lesson extends Model
 
     public function media()
     {
-        return $this->hasMany('App\Model\Media');
+        return $this->hasMany(Media::class);
     }
 }
