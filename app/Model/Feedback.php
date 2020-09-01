@@ -20,6 +20,6 @@ class Feedback extends Model
 
     public function subreviews()
     {
-        return $this->hasMany('App\Model\Subreview');
+        return $this->hasMany(Subreview::class);
     }
 }

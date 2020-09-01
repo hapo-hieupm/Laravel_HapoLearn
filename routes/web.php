@@ -25,4 +25,4 @@ Route::resources([
     // 'lessons' => 'LessonController'
     ]);
 
-Route::post('/courses/search','CourseController@search')->name('courses.search');
+Route::get('/courses/search','CourseController@search')->name('courses.search');

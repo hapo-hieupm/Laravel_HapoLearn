@@ -3,7 +3,7 @@
     @if(isset($courses))
         <div class="container list_course">
             <div class="d-flex flex-wrap">
-                <form action="/courses/search" method="POST" role="search">
+                <form action="/courses/search" method="GET" role="search">
                     {{ csrf_field() }}
                     <div class="input-group">
                         <input type="text" class="form-control" name="q"
