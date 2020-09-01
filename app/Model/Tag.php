@@ -4,6 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Model\Course;
 
 class Tag extends Model
 {
@@ -19,6 +20,6 @@ class Tag extends Model
 
     public function courses()
     {
-        return $this->belongstoMany('App\Model\Course');
+        return $this->belongstoMany(Course::class);
     }
 }

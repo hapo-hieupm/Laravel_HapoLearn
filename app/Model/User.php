@@ -5,6 +5,11 @@ namespace App\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Model\Feedback;
+use App\Model\Subreview;
+use App\Model\Lesson;
+use App\Model\Course;
 
 class User extends Authenticatable
 {
@@ -29,21 +34,21 @@ class User extends Authenticatable
 
     public function feedbacks()
     {
-        return $this->hasMany('App\Model\Feedback');
+        return $this->hasMany(Feedback::class);
     }
 
     public function subreviews()
     {
-        return $this->hasMany('App\Model\Subreview');
+        return $this->hasMany(Subreview::class);
     }
 
     public function lessons()
     {
-        return $this->belongstoMany('App\Model\Lesson');
+        return $this->belongstoMany(Lesson::class);
     }
 
     public function courses()
     {
-        return $this->belongstoMany('App\Model\Course');
+        return $this->belongstoMany(Course::class);
     }
 }

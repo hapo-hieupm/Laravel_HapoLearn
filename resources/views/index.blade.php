@@ -7,4 +7,5 @@
     @include('index.feedback')
     @include('index.join_banner')
     @include('index.statistic')
+    @include('index.mess')
 @endsection
