@@ -11,15 +11,15 @@
         <div class="col-md-6 d-flex justify-content-lg-end p-0 mt-lg-3 ml-lg-0 ml-md-4 pr-xl-5">
             <ul class="text-ul pl-xl-5 pl-md-0 mr-xl-4 pl-4">
                 <li class="d-flex align-items-center">
-                    <i class="fas fa-check-circle ml-n2 pr-2"></i> Interactive lessons, "on-the-go" practice, peer support.</li>
+                    <i class="fa fa-check-circle ml-n2 pr-2"></i> Interactive lessons, "on-the-go" practice, peer support.</li>
                 <li class="d-flex align-items-center my-xl-4 py-xl-2 my-3">
-                    <i class="fas fa-check-circle ml-n2 pr-2"></i> Interactive lessons, "on-the-go" practice, peer support.</li>
+                    <i class="fa fa-check-circle ml-n2 pr-2"></i> Interactive lessons, "on-the-go" practice, peer support.</li>
                 <li class="d-flex align-items-center">
-                    <i class="fas fa-check-circle ml-n2 pr-2"></i> Interactive lessons, "on-the-go" practice, peer support.</li>
+                    <i class="fa fa-check-circle ml-n2 pr-2"></i> Interactive lessons, "on-the-go" practice, peer support.</li>
                 <li class="d-flex align-items-center my-xl-4 py-xl-2 my-3">
-                    <i class="fas fa-check-circle ml-n2 pr-2"></i> Interactive lessons, "on-the-go" practice, peer support.</li>
+                    <i class="fa fa-check-circle ml-n2 pr-2"></i> Interactive lessons, "on-the-go" practice, peer support.</li>
                 <li class="d-flex align-items-center">
-                    <i class="fas fa-check-circle ml-n2 pr-2"></i> Interactive lessons, "on-the-go" practice, peer support.</li>
+                    <i class="fa fa-check-circle ml-n2 pr-2"></i> Interactive lessons, "on-the-go" practice, peer support.</li>
             </ul>
         </div>
         <div class="col-md-6 d-flex justify-content-center h-lg-100 mt-md-0 mt-3 pl-0 pr-xl-5">
