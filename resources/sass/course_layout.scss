@@ -1,0 +1,60 @@
+@import 'variables';
+
+* {
+  list-style-type: none;
+  list-style: none;
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.list_course {
+  .course-title {
+    letter-spacing: -0.05em;
+    -webkit-text-stroke: 0.3px $pri_text_color;
+    @include text(bold 25px/31px 'UTM BryantLG', $pri_text_color);
+  }
+
+  .ava {
+    width: 89px;
+    height: 89px;
+    border-radius: 80px;
+  }
+
+  .txt-descript {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    letter-spacing: -0.05em;
+    -webkit-text-stroke: 0.2px $pri_text_color_light;
+    @include text(18px/25px 'UTM BryantLG', $pri_text_color_light);
+  }
+
+  .button {
+    letter-spacing: -0.05em;
+    -webkit-text-stroke: 0.3px #FFFFFF;
+    @include text (bold 18px/22px 'UTM BryantLG', #FFFFFF);
+    @include primaryBtn($primary_color, 0.5rem 1rem, inset 0px 1.5px 2px #6F8710, 22px);
+  }
+ 
+  hr {
+    border: 1px solid #F1F1F1;
+  }
+  
+  .text-title {
+    @extend .course-title;
+    -webkit-text-stroke: 0;
+  }
+
+  .text-number {
+    letter-spacing: -0.05em;
+    -webkit-text-stroke: 1px $primary_color;
+    @include text(bold 30px/37px 'UTM BryantLG', $primary_color)
+  }
+}

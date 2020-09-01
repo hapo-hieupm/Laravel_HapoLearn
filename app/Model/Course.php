@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Model\Lesson;
 use App\Model\Feedback;
 use App\Model\Tag;
@@ -38,5 +39,11 @@ class Course extends Model
     public function users()
     {
         return $this->belongstoMany(User::class);
+    }
+
+    public function lessonsCount() {
+        return $this->lessons()
+            ->selectRaw('id, count(*) as total')
+            ->groupBy('id');
     }
 }

@@ -9,15 +9,15 @@
             </div>
         </button>
         <div class="col-xl-4 col-9 d-flex justify-content-xl-start justify-content-center navbar-brand">
-            <img alt="HapoLearn" class="img-logo"src="image/hapo_learn.png">
+            <img alt="HapoLearn" class="img-logo"src="{{ asset('storage/images/hapo_learn.png') }}">
         </div>
         <div class="col-xl-8 col-12 collapse navbar-collapse p-0" id="navbarNav">
             <ul class="col-12 d-flex justify-content-xl-end justify-content-md-between navbar-nav pl-3">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">All Courses</a>
+                    <a class="nav-link" href="courses">All Courses</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">List Lesson</a>
