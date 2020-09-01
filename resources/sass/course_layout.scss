@@ -14,6 +14,13 @@
 }
 
 .list_course {
+  .course {
+    background: #FFFFFF;
+    border: 1px solid #F1F1F1;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+  }
+
   .course-title {
     letter-spacing: -0.05em;
     -webkit-text-stroke: 0.3px $pri_text_color;

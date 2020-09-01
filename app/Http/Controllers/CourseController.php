@@ -18,16 +18,23 @@ class CourseController extends Controller
 
     public function search(CourseValidation $request) 
     {
-        $q = $request->all();
-        $courses = Course::where('name', 'LIKE', '%'.$q.'%')
-                        ->orwhere('description', 'LIKE', '%'.$key.'%')
+        $keyword = request('keyword');
+        $courses = Course::where('name', 'LIKE', '%'.$keyword.'%')
+                        ->orwhere('description', 'LIKE', '%'.$keyword.'%')
                         ->paginate(config('pagination.course'));
-        if (count($course) > 0)
-            return view('courses.list_course', compact('courses'))->withDetails($course)->withQuery ( $q );
-        else 
-            return view('courses.list_course', compact('courses'))->withMessage('notice', __('notice.failed.search'));
+        return view('courses.list_course', compact('courses'));
+        // if (count($courses) > 0) {
+        //     return view('courses.list_course', compact('courses'))->withDetails($courses)->withQuery ( $keyword );
+        // }
+        // else 
+        //     return view('courses.list_course', compact('courses'))->withMessage('notice', __('notice.failed.search'));   
     }
 
+    public function show ()
+    {
+        //
+    }
+    
     public function create()
     {
         return view('courses.create');
@@ -52,7 +59,7 @@ class CourseController extends Controller
     public function edit($id)
     {
         $Course = Course::find($id);
-        return view('courses.edit', compact('Course'));   
+        return view('courses.edit', compact('ourse'));   
     }
 
     public function update(CourseValidation $request, $id)
