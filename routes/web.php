@@ -23,10 +23,10 @@ Route::get('/admin', function () {
 
 Auth::routes();
 
-Route::resources([
-    // 'users' => 'UserController',
-    'courses' => 'CourseController',
-    // 'lessons' => 'LessonController'
-    ]);
+// Route::resources([
+//     // 'users' => 'UserController',
+//     'courses' => 'CourseController',
+//     // 'lessons' => 'LessonController'
+//     ]);
 
-Route::get('/courses/search','CourseController@search')->name('courses.search');
+Route::get('/courses','CourseController@index')->name('courses');

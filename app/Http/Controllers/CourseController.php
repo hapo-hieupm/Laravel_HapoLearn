@@ -4,30 +4,28 @@ namespace app\Http\Controllers;
 
 use App\Model\Course;
 use App\Http\Validations\CourseValidation;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Session;
 
 class CourseController extends Controller
 {
-    public function index()
-    {
-        $courses = Course::paginate(config('pagination.course'));
-        return view('courses.list_course', compact('courses'));
-    }
-
-    public function search(CourseValidation $request) 
-    {
-        $keyword = request('keyword');
-        $courses = Course::where('name', 'LIKE', '%'.$keyword.'%')
+    public function index(Request $request)
+    {   
+        if ($request->has('keyword')) {
+            $keyword = $request->keyword;
+            $courses = Course::where('name', 'LIKE', '%'.$keyword.'%')
                         ->orwhere('description', 'LIKE', '%'.$keyword.'%')
                         ->paginate(config('pagination.course'));
-        return view('courses.list_course', compact('courses'));
-        // if (count($courses) > 0) {
-        //     return view('courses.list_course', compact('courses'))->withDetails($courses)->withQuery ( $keyword );
-        // }
-        // else 
-        //     return view('courses.list_course', compact('courses'))->withMessage('notice', __('notice.failed.search'));   
+        } else { 
+            $courses = Course::paginate(config('pagination.course'));
+        }
+        if (count($courses) > 0) {
+            return view('courses.list_course', compact('courses'));
+        } else {
+            return view('courses.list_course', compact('courses'))->withMessage('notice', __('notice.failed.search'));
+        }
     }
 
     public function show ()
@@ -58,30 +56,30 @@ class CourseController extends Controller
     
     public function edit($id)
     {
-        $Course = Course::find($id);
+        $course = Course::findOrFail($id);
         return view('courses.edit', compact('ourse'));   
     }
 
     public function update(CourseValidation $request, $id)
     {
-        $Course = $request->all();
+        $course = $request->all();
         if ($request->hasFile('ava')) {
             $file = $request->ava;
             $ava = uniqid() . "_" . $file->getClientOriginalName();
-            $oldAva = Course::find($id)->ava;
+            $oldAva = Course::findOrFail($id)->ava;
             Storage::delete('public/ava_courses/' . $oldAva);
             $request->file('ava')->storeAs('public/ava_courses/', $ava);
-            $Course['ava'] = $ava;
+            $course['ava'] = $ava;
         }
-        Course::findOrFail($id)->update($Course);
+        Course::findOrFail($id)->update($course);
         return redirect()->route('courses')->with('notice', __('notice.success.update'));
     }
 
     
     public function destroy($id)
     {
-        $Course = Course::find($id);
-        $Course->delete();
+        $course = Course::findOrFail($id);
+        $course->delete();
         return redirect()->route('courses')->with('notice', __('notice.success.delete'));
     }
 }

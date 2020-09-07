@@ -37378,7 +37378,9 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // require('admin-lte/dist/js/adminlte.min');
 // require('slick-carousel/slick/slick.min');
 // require('slick-carousel/slick/slick');
-// require('./index');
+
+
+__webpack_require__(/*! ./index */ "./resources/js/index.js");
 
 /***/ }),
 
@@ -37424,6 +37426,45 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/index.js":
+/*!*******************************!*\
+  !*** ./resources/js/index.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+  $('.mess-btn').click(function () {
+    $('.mess-box').toggle();
+  });
+  $('.btn-close').click(function () {
+    $('.mess-box').hide();
+  });
+  $('.feedback-slick').slick({
+    centerMode: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    prevArrow: $('.left'),
+    nextArrow: $('.right'),
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 980,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }]
+  });
+  $('.filter').click(function () {
+    $('.filter-bar').toggle();
+  });
+});
 
 /***/ }),
 
