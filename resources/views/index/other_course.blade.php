@@ -31,6 +31,6 @@
         </div>
     </div>
     <div class="mt-md-5 mb-md-2 mt-4 mb-1 py-xl-3">
-        <a class="text-link" href="#">View All Our Courses <i class="fa fa-long-arrow-alt-right"></i></a>
+        <a class="text-link" href="#">View All Our Courses <i class="fa fa-long-arrow-right"></i></a>
     </div>
 </section>

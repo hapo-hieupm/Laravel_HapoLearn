@@ -70,4 +70,35 @@ class Course extends Model
         return $this->where('id', '!=', $this->id)
                     ->take(config('pagination.course'))->get();
     }
+
+    public function getTagNameAttribute()
+    {
+        $tags = $this->tags;
+        if (count($tags) > 0) {
+            $tagName = '#' . $tags->first()->name;
+
+            for ($i = 1; $i < count($tags); $i++) {
+                $tagName .= ", " . '#' . $tags[$i]->name;
+            }
+        } else {
+            $tagName = "#All";
+        }
+
+        return $tagName;
+    }
+
+    public function getNumOfUserAttribute()
+    {
+        $check = $this->users()
+            ->wherePivot('user_id', User::user()->id)
+            ->wherePivot('course_id', $this->id)
+            ->exists();
+        return $check;
+    }
+
+    public function getTotalTimeAttribute()
+    {
+        $time = $this->lessons()->sum('time');
+        return $time;
+    }
 }

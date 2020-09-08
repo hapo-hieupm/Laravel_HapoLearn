@@ -7,20 +7,31 @@
     @include text(16px/20px 'UTM BryantLG', $pri_text_color);
   }
 
-  hr {
-    border: 1px solid $primary_color;
-  }
+  .description {
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    box-sizing: border-box;
 
-  .course_title {
-    letter-spacing: -0.02em;
-    -webkit-text-stroke: 0.5px $pri_text_color;
-    @include text(bold 25px/31px 'UTM BryantLG', $pri_text_color);
-  }
+    hr {
+      border: 1px solid $primary_color;
+    }
 
-  .descript {
-    text-align: justify;
-    letter-spacing: -0.02em;
-    @include text(bold 18px/26px 'UTM BryantLG', #949292);
+    .title {
+      letter-spacing: -0.02em;
+      -webkit-text-stroke: 0.5px $pri_text_color;
+      @include text(bold 25px/31px 'UTM BryantLG', $pri_text_color);
+    }
+      
+    
+    .txt {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 13;
+      -webkit-box-orient: vertical;
+      text-align: justify;
+      letter-spacing: -0.02em;
+      @include text(bold 18px/26px 'UTM BryantLG', #949292);
+    }
   }
 
   .paremeter {
@@ -52,33 +63,85 @@
     }
   }
 
-  .other-course {
-    thead {
-      background: #B2D235;
-      border: 1px solid #DEDEDE;
-      letter-spacing: -0.05em;
-      -webkit-text-stroke: 0.3px #FFFFFF;
-      @include text (bold 25px/31px 'UTM BryantLG', #FFFFFF);
-    }
+  .btn-search {
+    border: 1px solid $primary_color;
+    @include text(bold 15px/20px 'Open Sans', #FFFFFF);
+    @include primaryBtn($primary_color, 0.5rem, none, 5px);
+  }
+}
 
-    .txt-body {
+.other-course {
+  thead {
+    background: #B2D235;
+    border: 1px solid #DEDEDE;
+    letter-spacing: -0.05em;
+    -webkit-text-stroke: 0.3px #FFFFFF;
+    @include text (bold 25px/31px 'UTM BryantLG', #FFFFFF);
+  }
+
+  .txt-body {
+    letter-spacing: -0.02em;
+    @include text (bold 16px/20px 'UTM BryantLG', $pri_text_color);
+  
+    &:hover {
+    color: $primary_color;
+    }
+  }
+
+  .button {
+    letter-spacing: -0.05em;
+    -webkit-text-stroke: 0.3px #FFFFFF;
+    @include text (bold 18px/22px 'UTM BryantLG', #FFFFFF);
+    @include primaryBtn($primary_color, 0.25rem 0.5rem, inset 0px 1.5px 2px #6F8710, 22px);
+  }
+
+  .button:hover {
+    font-size: 20px;
+  }
+}
+
+.review {
+  .total-box {
+    background: $pri_text_color;
+    border-radius: 5px;
+    width: 15.25rem;
+    height: 11rem;
+  }
+
+  .total-star {
+    border: 1px solid #DFDFDF;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    .slider {
+      background: #E1E1E1;
+      border-radius: 2px;
+    }
+    .slider.active {
+      $background: $primary_color;
+    }
+  }
+
+  .cmt {
+    .content {
       letter-spacing: -0.02em;
-      @include text (bold 16px/20px 'UTM BryantLG', $pri_text_color);
+      @include text(18px/26px 'UTM BryantLG', #949292);
     }
 
-    .txt-body:hover {
-      color: $primary_color;
+    .date {
+      letter-spacing: -0.02em;
+      @include text(14px/17px 'UTM BryantLG', #BDB9B9);
     }
 
-    .button {
-      letter-spacing: -0.05em;
-      -webkit-text-stroke: 0.3px #FFFFFF;
-      @include text (bold 18px/22px 'UTM BryantLG', #FFFFFF);
-      @include primaryBtn($primary_color, 0.25rem 0.5rem, inset 0px 1.5px 2px #6F8710, 22px);
+    .author {
+      letter-spacing: -0.02em;
+      -webkit-text-stroke: 0.4px $pri_text_color;
+      @include text(bold 18px/22px 'UTM BryantLG', $pri_text_color);
     }
 
-    .button:hover {
-      font-size: 20px;
+    .ava {
+      width: 2.5rem;
+      height: 2.5rem;
     }
   }
 }

@@ -42,6 +42,7 @@ header {
     
     &:hover {
       color: #FEFFFF !important;
+      -webkit-text-stroke: 0.3px #FEFFFF;
       background-color: $primary_color !important;
     }
   }

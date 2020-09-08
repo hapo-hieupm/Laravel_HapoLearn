@@ -1,16 +1,17 @@
 @if ($paginator->hasPages())
-    <nav>
+    <nav class="container">
         <ul class="pagination">
             {{-- Previous Page Link --}}
             @if ($paginator->onFirstPage())
-                <li class="page-item disabled mx-1" aria-disabled="true" aria-label="@lang('pagination.previous')">
-                    <i class="fa fa-long-arrow-left page-link" aria-hidden="true"></i>
+                <li class="page-item disabled ml-auto mr-1" aria-disabled="true" 
+                aria-label="@lang('pagination.previous')">
+                    <span class="page-link"><i class="fa fa-long-arrow-left"></i></span>
                 </li>
             @else
-                <li class="page-item mx-1">
-                    <a class="page-link" href="{{ $paginator->previousPageUrl() }}" rel="prev" 
+                <li class="page-item ml-auto mr-1">
+                    <a href="{{ $paginator->previousPageUrl() }}" rel="prev" 
                         aria-label="@lang('pagination.previous')">
-                        <i class="fa fa-long-arrow-left page-link" aria-hidden="true">
+                        <span class="page-link"><i class="fa fa-long-arrow-left"></i></span>
                         </i>
                     </a>
                 </li>
@@ -37,15 +38,15 @@
 
             {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())
-                <li class="page-item mx-1">
-                    <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next" 
+                <li class="page-item ml-1 mr-3">
+                    <a href="{{ $paginator->nextPageUrl() }}" rel="next" 
                         aria-label="@lang('pagination.next')">
-                        <i class="fa fa-long-arrow-right page-link" aria-hidden="true"></i>
+                        <span class="page-link"><i class="fa fa-long-arrow-right"></i></span>
                     </a>
                 </li>
             @else
-                <li class="page-item disabled mx-1" aria-disabled="true" aria-label="@lang('pagination.next')">
-                    <i class="fa fa-long-arrow-right page-link" aria-hidden="true"></i>
+                <li class="page-item disabled ml-1 mr-3" aria-disabled="true" aria-label="@lang('pagination.next')">
+                <span class="page-link"><i class="fa fa-long-arrow-right"></i></span>
                 </li>
             @endif
         </ul>
