@@ -1,9 +1,9 @@
 require('./bootstrap');
 
-// require('admin-lte/dist/js/adminlte.min');
+require('admin-lte/dist/js/adminlte.min');
 
-// require('slick-carousel/slick/slick.min');
+require('slick-carousel/slick/slick.min');
 
-// require('slick-carousel/slick/slick');
+require('slick-carousel/slick/slick');
 
 require('./index');

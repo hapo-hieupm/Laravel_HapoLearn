@@ -56,7 +56,7 @@ class Course extends Model
     {
         $price = $this->price;
 
-        if ($price == NULL) {
+        if ($price == null) {
             $price = 'Free';
         } else {
             $price .= "$";
@@ -67,6 +67,7 @@ class Course extends Model
 
     public function getOtherCourseAttribute()
     {
-        return $this->where('id', '!=', $this->id)->take(config('pagination.course'))->get();
+        return $this->where('id', '!=', $this->id)
+                    ->take(config('pagination.course'))->get();
     }
 }

@@ -13,7 +13,7 @@ use App\Filter\CourseFilter;
 class CourseController extends Controller
 {
     public function index(CourseFilter $filters)
-    {   
+    {
         $courses = Course::filter($filters)->paginate(config('pagination.course'));
         if (count($courses) > 0) {
             return view('courses.list_course', compact('courses'));
@@ -27,8 +27,8 @@ class CourseController extends Controller
         $courseDetail = Course::findOrFail($id);
         $lessons = $courseDetail->lessons()
             ->paginate(config('pagination.course'));
-        return view('courses.course_detail', compact('courseDetail', 'lessons', 'id'));    
-    }
+        return view('courses.course_detail', compact('courseDetail', 'lessons', 'id'));
+        }
 
     public function create()
     {
@@ -36,9 +36,9 @@ class CourseController extends Controller
     }
 
     public function store(CourseValidation $request)
-    {   
+    {
         $allRequest  = $request->all();
-        if($request->hasFile('ava')) {
+        if ($request->hasFile('ava')) {
             $path = Storage::putFile('ava', $request->file('ava'));
             $destinationPath = 'public/ava_courses/';
             $image = $request->file('ava');
@@ -54,7 +54,7 @@ class CourseController extends Controller
     public function edit($id)
     {
         $course = Course::findOrFail($id);
-        return view('courses.edit', compact('course'));   
+        return view('courses.edit', compact('course')); 
     }
 
     public function update(CourseValidation $request, $id)

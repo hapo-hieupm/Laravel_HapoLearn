@@ -4,17 +4,17 @@
 
 @import '~bootstrap/scss/bootstrap';
 
-// @import '~bootstrap/dist/css/bootstrap.css';
+@import '~bootstrap/dist/css/bootstrap.css';
 
-// @import '~admin-lte/dist/css/adminlte.min.css';
+@import '~admin-lte/dist/css/adminlte.min.css';
 
 @import '~font-awesome/css/font-awesome.css';
 
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 
-// @import '~admin-lte/dist/css/adminlte.css';
+@import '~admin-lte/dist/css/adminlte.css';
 
-// @import '~slick-carousel/slick/slick.scss';
+@import '~slick-carousel/slick/slick.scss';
 
 @import 'variables';
 
@@ -22,8 +22,8 @@
 
 @import 'course_layout';
 
-// @import 'course_detail';
+@import 'course_detail';
 
 @import 'pagination';
 
-// @import 'responsive';
+@import 'responsive';
