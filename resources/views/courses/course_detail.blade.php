@@ -3,9 +3,9 @@
     <div class="course_detail">
         <div class="d-flex txt-path">
             <a class="txt-path" href="#">Home</a>
-            >
+            
             <a class="txt-path" href="#">All courses</a>
-            >
+            
             <a class="txt-path" href="#">Course detail</a>
         </div>
         <div class="d-flex">

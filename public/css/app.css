@@ -12825,8 +12825,26 @@ footer .div-content-back {
   transition: 0s;
   text-align: center;
 }
-.list_course .filter-bar {
-  display: none;
+.list_course .filter-bar .txt-title {
+  font: bold 16px/22px "Open Sans";
+  color: #505353 !important;
+}
+.list_course .filter-bar .txt {
+  font: 14px/19px "Open Sans";
+  color: #505353 !important;
+}
+.list_course .filter-bar .button {
+  text-decoration: none;
+  background-color: #E5E6E7 !important;
+  padding: 0.4rem !important;
+  box-shadow: none;
+  border-radius: 2px;
+  transition: 0s;
+  text-align: center;
+}
+.list_course .filter-bar .button.active {
+  color: #FFFFFF !important;
+  background-color: #B2D235;
 }
 
 @font-face {

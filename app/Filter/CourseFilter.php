@@ -1,9 +1,18 @@
 <?php
 
-namespace App;
+namespace App\Filter;
 
-class LessonFilters extends QueryFilter
+class CourseFilter extends QueryFilter
 {
+    public  function keyword($value)
+    {
+        if ($value == NULL) {
+            return $this->builder->get();
+        }
+        return  $this->builder->where('name' , 'like' , "{$value}%")
+                              ->orwhere('description' , 'like' , "{$value}%");
+    }
+    
     public function create_time($order)
     {
         return $this->builder->orderBy('create_at', $order);
@@ -11,6 +20,6 @@ class LessonFilters extends QueryFilter
 
     public function lesson($lesson)
     {
-        return $this->builder->orderBy('difficulty', $lesson);
+        //
     }
 }

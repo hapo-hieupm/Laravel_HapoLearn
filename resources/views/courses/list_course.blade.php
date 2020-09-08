@@ -3,7 +3,7 @@
     @if(isset($courses))
         <div class="container list_course d-flex flex-column">
             <div class="d-flex align-items-center">
-                <div class="filter">
+                <div class="filter" id="filter">
                     <div class="d-flex align-items-center text-filter px-2 py-2">
                         <i class="fa fa-sliders pr-2" aria-hidden="true"></i>
                         Filter
@@ -11,10 +11,12 @@
                 </div>
                 <form action="{{ route('courses') }}" method="GET" role="search">
                     {{ csrf_field() }}
-                    <div class="input-group d-flex">
+                    <div class="input-group d-flex ml-5">
                         <input type="text" class="form-control" name="keyword" placeholder="Search courses"> 
-                        <i class="fa fa-search ml-n5 position-relative" type="submit"></i>
                         <div class="input-group-btn ml-5">
+                            <button type="submit">
+                                <i class="fa fa-search ml-n5" type="submit"></i>
+                            </button>
                             <button type="submit" class="btn-search">
                                 Tìm kiếm
                             </button>
@@ -22,43 +24,56 @@
                     </div>
                 </form>
             </div>
-            <div class="filter-bar">
-                <div class="box">
-                    <form action="{{ route('courses') }}" method="GET" role="search">
+            <div class="filter-bar" id="filter_bar">
+                <div class="box px-3 pt-3">
+                    <form action="{{ route('courses') }}" method="GET" role="filter">
                         {{ csrf_field() }}
                         <div class="d-flex flex-wrap form-group">
-                            <div class="text-name">
+                            <div class="txt-title ml-5 my-2">
                                 Lọc theo
                             </div>
-                            <!-- <select name="create_time" id="create_time" class="form-control input dynamic" data-dependent="state">
-                                <option value="">Teacher</option>
-                                <div class="btn-new active">
-                                <a class="" href="/?time=Newest">Mới nhất</a>
+                            <div class="mx-3 my-2">
+                                <select name="create_time" id="create_time" class="form-control input dynamic" data-dependent="state">
+                                    <option value="desc">
+                                        <div class="txt button active">Mới nhất</div>
+                                    </option>
+                                    <option value="asc">
+                                        <div class="txt button">Cũ nhất</div>
+                                    </option>
+                                </select>
                             </div>
-                            <div class="btn-new none">
-                                <a class="" href="/?time=Oldest">Cũ nhất</a>
+                            <div class="mx-3 my-2">
+                                <select name="teacher" id="teacher" class="form-control input dynamic" data-dependent="state">
+                                    <option value="" class="txt">Teacher</option>
+                                </select>
                             </div>
-                            </select> -->
-                            <select name="teacher" id="teacher" class="form-control input dynamic" data-dependent="state">
-                                <option value="">Teacher</option>
-                            </select>
-                            <select name="learner" id="learner" class="form-control input dynamic" data-dependent="state">
-                                <option value="">Số người học</option>
-                            </select>
-                            <select name="course-time" id="course-time" class="form-control input dynamic" data-dependent="state">
-                                <option value="">Thời gian học</option>
-                            </select>
-                            <select name="lesson" id="lesson" class="form-control input dynamic" data-dependent="state">
-                                <option value="">Số bài học</option>
-                                <option value="asc">Tăng dần</option>
-                                <option value="decs">Giảm dần</option>
-                            </select>
-                            <select name="tag" id="tag" class="form-control input dynamic" data-dependent="state">
-                                <option value="">Tags</option>
-                            </select>
-                            <select name="review" id="review" class="form-control input dynamic" data-dependent="state">
-                                <option value="">review</option>
-                            </select>
+                            <div class="mx-3 my-2">
+                                <select name="learner" id="learner" class="form-control input dynamic" data-dependent="state">
+                                    <option value="" class="txt">Số người học</option>
+                                </select>
+                            </div>
+                            <div class="mx-3 my-2">
+                                <select name="course-time" id="course-time" class="form-control input dynamic" data-dependent="state">
+                                    <option value="" class="txt">Thời gian học</option>
+                                </select>
+                            </div>
+                            <div class="mx-3 my-2">
+                                <select name="lesson" id="lesson" class="form-control input dynamic" data-dependent="state">
+                                    <option value="" class="txt">Số bài học</option>
+                                    <option value="asc" class="txt">Tăng dần</option>
+                                    <option value="decs" class="txt">Giảm dần</option>
+                                </select>
+                            </div>
+                            <div class="mx-3 my-2">
+                                <select name="tag" id="tag" class="form-control input dynamic" data-dependent="state">
+                                    <option value="" class="txt">Tags</option>
+                                </select>
+                            </div>
+                            <div class="mx-3 my-2">
+                                <select name="review" id="review" class="form-control input dynamic" data-dependent="state">
+                                    <option value="" class="txt">Review</option>
+                                </select>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -78,7 +93,7 @@
                                 </div>
                             </div>
                             <div class="ml-auto mr-3">
-                                <a class="button" href="#">More</a>
+                                <a class="button" href="{{ Route('course', $course->id) }}">More</a>
                             </div>
                             <hr>
                             <div class="d-flex justify-content-around">

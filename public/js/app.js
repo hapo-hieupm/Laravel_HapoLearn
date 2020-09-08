@@ -37461,8 +37461,8 @@ $(document).ready(function () {
       }
     }]
   });
-  $('.filter').click(function () {
-    $('.filter-bar').toggle();
+  $("#filter").click(function () {
+    $("#filter_bar").toggle();
   });
 });
 

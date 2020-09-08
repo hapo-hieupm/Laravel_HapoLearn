@@ -8,19 +8,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Session;
+use App\Filter\CourseFilter;
 
 class CourseController extends Controller
 {
-    public function index(Request $request)
+    public function index(CourseFilter $filters)
     {   
-        if ($request->has('keyword')) {
-            $keyword = $request->keyword;
-            $courses = Course::where('name', 'LIKE', '%'.$keyword.'%')
-                        ->orwhere('description', 'LIKE', '%'.$keyword.'%')
-                        ->paginate(config('pagination.course'));
-        } else { 
-            $courses = Course::paginate(config('pagination.course'));
-        }
+        $courses = Course::filter($filters)->paginate(config('pagination.course'));
         if (count($courses) > 0) {
             return view('courses.list_course', compact('courses'));
         } else {
@@ -28,11 +22,14 @@ class CourseController extends Controller
         }
     }
 
-    public function show ()
+    public function show($id)
     {
-        //
+        $courseDetail = Course::findOrFail($id);
+        $lessons = $courseDetail->lessons()
+            ->paginate(config('pagination.course'));
+        return view('courses.course_detail', compact('courseDetail', 'lessons', 'id'));    
     }
-    
+
     public function create()
     {
         return view('courses.create');
@@ -57,7 +54,7 @@ class CourseController extends Controller
     public function edit($id)
     {
         $course = Course::findOrFail($id);
-        return view('courses.edit', compact('ourse'));   
+        return view('courses.edit', compact('course'));   
     }
 
     public function update(CourseValidation $request, $id)

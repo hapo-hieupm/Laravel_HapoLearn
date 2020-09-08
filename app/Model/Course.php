@@ -46,4 +46,27 @@ class Course extends Model
     {
         return $filters->apply($query);
     }
+
+    public function getNumOfLessonAttribute()
+    {
+        return $this->lessons()->count();
+    }
+
+    public function getPriceCourseAttribute()
+    {
+        $price = $this->price;
+
+        if ($price == NULL) {
+            $price = 'Free';
+        } else {
+            $price .= "$";
+        }
+
+        return $price;
+    }
+
+    public function getOtherCourseAttribute()
+    {
+        return $this->where('id', '!=', $this->id)->take(config('pagination.course'))->get();
+    }
 }

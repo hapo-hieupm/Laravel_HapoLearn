@@ -22,7 +22,9 @@ abstract class QueryFilter
 
         foreach ($this->filters() as $name => $value) {
             if (method_exists($this, $name)) {
-                call_user_func_array([$this, $name], array_filter([$value]));
+                if ($value != NULL){
+                    call_user_func_array([$this, $name], array_filter([$value]));
+                }
             }
         }
 

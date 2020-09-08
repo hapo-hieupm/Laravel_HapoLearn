@@ -92,6 +92,22 @@
   }
   
   .filter-bar {
-    display: none; 
+    // display: none;
+    
+    .txt-title {
+      @include text(bold 16px/22px 'Open Sans', $pri_text_color);
+    }
+    .txt {
+      @include text(14px/19px 'Open Sans', $pri_text_color);
+    }
+
+    .button {
+      @include primaryBtn(#E5E6E7, 0.4rem, none, 2px);
+
+      &.active {
+        color: #FFFFFF !important;
+        background-color: $primary_color;
+      }
+    }
   }
 }
