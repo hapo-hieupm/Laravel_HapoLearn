@@ -17,9 +17,4 @@ class CourseFilter extends QueryFilter
     {
         return $this->builder->orderBy('create_at', $order);
     }
-
-    public function lesson($lesson)
-    {
-        //
-    }
 }
