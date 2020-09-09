@@ -48,6 +48,10 @@
       @include text (bold 18px/22px 'UTM BryantLG', #FFFFFF);
       @include primaryBtn($primary_color, 0.5rem 1rem, inset 0 1.5px 2px #6F8710, 22px);
     }
+    
+    .button:hover {
+      font-size: 20px;
+    }
   
     hr {
       border: 1px solid #F1F1F1;
@@ -89,6 +93,10 @@
     border: 1px solid $primary_color;
     @include text(bold 15px/20px 'Open Sans', #FFFFFF);
     @include primaryBtn($primary_color, 0.5rem, none, 5px);
+
+    &.hover {
+      font-size: 17px;
+    }
   }
   
   .filter-bar {

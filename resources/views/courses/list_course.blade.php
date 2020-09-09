@@ -2,7 +2,7 @@
 @section('content')
     @if(isset($courses))
         <div class="container list_course d-flex flex-column">
-            <div class="d-flex align-items-center">
+            <div class="col-12 d-flex align-items-center">
                 <div class="filter" id="filter">
                     <div class="d-flex align-items-center text-filter px-2 py-2">
                         <i class="fa fa-sliders pr-2" aria-hidden="true"></i>
@@ -24,7 +24,7 @@
                     </div>
                 </form>
             </div>
-            <div class="filter-bar" id="filter_bar">
+            <div class="filter-bar mt-3 col-12" id="filter_bar">
                 <div class="box px-3 pt-3">
                     <form action="{{ route('courses') }}" method="GET" role="filter">
                         {{ csrf_field() }}
@@ -80,8 +80,8 @@
             </div>
             <div class="d-flex flex-wrap mt-5">
                 @foreach($courses as $course)
-                <div class="col-6 my-3">
-                    <div class="course my-1">
+                <div class="col-6 my-2">
+                    <div class="course my-1 p-3">
                         <div class="d-flex flex-column">
                             <div class="d-flex">
                                 <img class="ava" src="{{ ($course->ava == null) ? asset('storage/ava_courses/php.png') : asset('/storage/ava_courses/' . $course->ava) }}">
