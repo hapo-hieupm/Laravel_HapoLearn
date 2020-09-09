@@ -46,7 +46,7 @@
       letter-spacing: -0.05em;
       -webkit-text-stroke: 0.3px #FFFFFF;
       @include text (bold 18px/22px 'UTM BryantLG', #FFFFFF);
-      @include primaryBtn($primary_color, 0.5rem 1rem, inset 0px 1.5px 2px #6F8710, 22px);
+      @include primaryBtn($primary_color, 0.5rem 1rem, inset 0 1.5px 2px #6F8710, 22px);
     }
   
     hr {
