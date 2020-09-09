@@ -30,6 +30,6 @@ $(document).ready(function(){
     });
 
     $("#filter").click(function() {
-        $("#filter_bar").toggle();
+        $("#filterBar").toggle();
     });
   });
