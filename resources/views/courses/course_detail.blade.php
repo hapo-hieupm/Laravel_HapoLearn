@@ -1,24 +1,36 @@
 @extends('layouts.layout')
 @section('content')
-    <div class="course_detail container">
-        <div class="d-flex txt-path">
-            <a class="txt-path" href="/">Home</a>
-            >
-            <a class="txt-path" href="/courses">All courses</a>
-            >
-            <a class="txt-path" href="/courses/{{ $courseDetail->id }}">Course detail</a>
+<div class="bg-course-detail">
+    <div class="course-detail">
+        <div class="path">
+            <div class="container d-flex px-0 py-2">
+                <a class="txt-path mx-2" href="/">Home</a>
+                >
+                <a class="txt-path mx-2" href="/courses">All courses</a>
+                >
+                <a class="txt-path ml-2" href="/courses/{{ $courseDetail->id }}">Course detail</a>
+            </div>
         </div>
-        <div class="d-flex">
+        <div class="container d-flex mt-3 px-0">
             <div class="col-9">
                 <img class="ava" src="{{ ($courseDetail->ava == null) ? asset('storage/ava_courses/php.png') : asset('/storage/ava_courses/' . $courseDetail->ava) }}">
             </div>
-            <div class="col-3 d-flex flex-column description">
-                <div class="title">Descriptions course</div>
-                <hr>
-                <div class="txt">{{ $courseDetail->description }}</div>
+            <div class="col-3 description px-3 pt-3">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descriptions course</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ $courseDetail->description }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="d-flex">
+        <div class="container d-flex mt-3 px-0">
             <div class="col-9">
                 <table class="table parameter">
                     <thead>
@@ -28,9 +40,9 @@
                             <th><a href="#" id="review" class="">Reviews</a></th>
                         </tr>
                     </thead>
-                </table>
+                
                 <table class="table parameter mt-n3">
-                    <tbody id="lesson_body">
+                    <tbody id="lessonBody">
                         <tr>
                             <td>
                                 <form action="{{ route('course', $courseDetail->id) }}" method="GET" role="search">
@@ -51,10 +63,13 @@
                                 <a class="button-primary pr-3" href="#">Tham gia khoá học</a>
                             </td>
                         </tr>
+                        @php 
+                            $index = 0
+                        @endphp
                         @foreach($lessons as $lesson)
                             <tr>
                                 <td>      
-                                    <a class="pl-3" href="#">{{ $lesson->name }}</a>
+                                    <a class="pl-3" href="#">{{ $index +=1 }}. {{ $lesson->name }}</a>
                                 </td>
                                 <td>
                                     <a class="pr-3" href="#">Learn</a>
@@ -62,16 +77,16 @@
                             </tr>
                         @endforeach
                     </tbody>
-                    <tbody id="teacher_body">
+                    <tbody id="teacherBody">
                         @include('courses.teacher')
                     </tbody>
-                    <tbody id="review_body">
+                    <tbody id="reviewBody">
                         @include('courses.review')
                     </tbody>
                 </table>
                
             </div>
-            <div class="col-3 d-flex flex-column">
+            <div class="col-3 d-flex flex-column px-0">
                 <table class="table parameter">
                     <tbody>
                         <tr>
@@ -116,12 +131,10 @@
                         </tr>
                     </tbody>
                 </table>
-                
-               <!-- other_courses -->
-            </div>
-           
-        </div>
-        
-    </div>
-    
+                @include('courses.other_course')
+            </div> 
+        </div>   
+    </div> 
+</div>
 @endsection
+

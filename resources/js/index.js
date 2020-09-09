@@ -29,8 +29,12 @@ $(document).ready(function(){
       ]
     });
 
-    $("#filter").click(function() {
-        $("#filter_bar").toggle();
+    $('.a.filter').click(function() {
+        $('.filter-bar').toggle();
+    });
+
+    $('select').on('change', function(){
+      $(this).closest('form').submit();
     });
   });
   

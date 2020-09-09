@@ -5,10 +5,13 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($courseDetail->other_courses as $other_course)
+        @php 
+            $index = 0
+        @endphp
+        @foreach($courseDetail->other_course as $other_course)
             <tr>
                 <td>
-                    <a class="txt-body" href="#">{{ $other_courses->index }}. {{ $other_course->name }}</a>
+                    <a class="txt-body" href="{{ Route('course', $other_course->id) }}">{{ $index += 1 }}. {{ $other_course->name }}</a>
                 </td>
             </tr>
         @endforeach

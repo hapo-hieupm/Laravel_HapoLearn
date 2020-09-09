@@ -68,7 +68,7 @@ class Course extends Model
     public function getOtherCourseAttribute()
     {
         return $this->where('id', '!=', $this->id)
-                    ->take(config('pagination.course'))->get();
+                    ->take(config('pagination.other_course'))->get();
     }
 
     public function getTagNameAttribute()

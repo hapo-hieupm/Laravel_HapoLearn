@@ -1,10 +1,14 @@
 @import 'variables';
 
-.course_detail {
+.bg-course-detail {
   background: #F2F2F2;
+}
+.course-detail {
+  .path {
+    background: #E9E7E7;
+  }
 
   .txt-path {
-    background: #E9E7E7;
     letter-spacing: -0.02em;
     @include text(16px/20px 'UTM BryantLG', $pri_text_color);
   }
@@ -16,26 +20,19 @@
 
   .description {
     background: #FFFFFF;
-    border: 1px solid #D1D1D1;
-    box-sizing: border-box;
 
-    hr {
-      border: 1px solid $primary_color;
-    }
-
-    .title {
+    th {
       letter-spacing: -0.02em;
       -webkit-text-stroke: 0.5px $pri_text_color;
       @include text(bold 25px/31px 'UTM BryantLG', $pri_text_color);
     }
       
     
-    .txt {
+    td {
       overflow: hidden;
       display: -webkit-box;
       -webkit-line-clamp: 13;
       -webkit-box-orient: vertical;
-      text-align: justify;
       letter-spacing: -0.02em;
       @include text(bold 18px/26px 'UTM BryantLG', #949292);
     }
@@ -89,7 +86,7 @@
 }
 
 .other-course {
-  thead {
+  thead th {
     background: #B2D235;
     border: 1px solid #DEDEDE;
     letter-spacing: -0.05em;
@@ -97,7 +94,7 @@
     @include text (bold 25px/31px 'UTM BryantLG', #FFFFFF);
   }
 
-  .txt-body {
+  tbody td .txt-body {
     letter-spacing: -0.02em;
     @include text (bold 16px/20px 'UTM BryantLG', $pri_text_color);
   
@@ -105,6 +102,11 @@
     color: $primary_color;
     }
   }
+}
+
+table {
+  background: #FFFFFF;
+  border: 1px solid #D1D1D1;
 }
 
 .review {
