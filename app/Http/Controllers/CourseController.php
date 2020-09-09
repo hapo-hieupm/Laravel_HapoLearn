@@ -43,7 +43,7 @@ class CourseController extends Controller
             $image = $request->file('ava');
             $imageName = $image->getClientOriginalName();
             $path = $request->file('ava')->storeAs($destinationPath, $imageName);
-            $allRequest['ava'] = $imageName;
+            $allRequest['ava'] = $path;
         }
         Course::create($allRequest);
         return redirect()->route('courses')->with('notice', __('notice.success.store'));
