@@ -28,7 +28,7 @@ class CourseController extends Controller
         $lessons = $courseDetail->lessons()
             ->paginate(config('pagination.course'));
         return view('courses.course_detail', compact('courseDetail', 'lessons', 'id'));
-        }
+    }
 
     public function create()
     {
@@ -54,7 +54,7 @@ class CourseController extends Controller
     public function edit($id)
     {
         $course = Course::findOrFail($id);
-        return view('courses.edit', compact('course')); 
+        return view('courses.edit', compact('course'));
     }
 
     public function update(CourseValidation $request, $id)
