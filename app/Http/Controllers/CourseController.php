@@ -39,7 +39,6 @@ class CourseController extends Controller
     {
         $allRequest  = $request->all();
         if ($request->hasFile('ava')) {
-            $path = Storage::putFile('ava', $request->file('ava'));
             $destinationPath = 'public/ava_courses/';
             $image = $request->file('ava');
             $imageName = $image->getClientOriginalName();
