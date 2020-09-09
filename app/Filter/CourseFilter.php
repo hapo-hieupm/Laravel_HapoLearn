@@ -9,7 +9,7 @@ class CourseFilter extends QueryFilter
         if ($value == null) {
             return $this->builder->get();
         }
-        return  $this->builder->where('name', 'like', "{$value}%")
+        return $this->builder->where('name', 'like', "{$value}%")
                               ->orwhere('description', 'like', "{$value}%");
     }
     
