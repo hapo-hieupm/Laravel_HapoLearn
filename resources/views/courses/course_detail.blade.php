@@ -52,7 +52,7 @@
                                 <a class="button" href="#">Tham gia khoá học</a>
                             </td>
                         </tr>
-                        @foreach $lessons as $lesson
+                        @foreach($lessons as $lesson)
                             <tr>
                                 <td>
                                     <a class="" href="{{ Route('lesson', $lesson->id) }}">{{ $lesson->name }}</a>
