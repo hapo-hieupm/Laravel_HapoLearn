@@ -28,7 +28,7 @@ class CourseController extends Controller
         $lessons = $courseDetail->lessons()
             ->paginate(config('pagination.course'));
         return view('courses.course_detail', compact('courseDetail', 'lessons', 'id'));
-        }
+    }
 
     public function create()
     {

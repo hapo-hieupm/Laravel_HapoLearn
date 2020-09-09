@@ -59,7 +59,7 @@ class Course extends Model
         if ($price == null) {
             $price = 'Free';
         } else {
-            $price .= "$";
+            $price .= " $";
         }
 
         return $price;
@@ -89,11 +89,8 @@ class Course extends Model
 
     public function getNumOfUserAttribute()
     {
-        $check = $this->users()
-            ->wherePivot('user_id', User::user()->id)
-            ->wherePivot('course_id', $this->id)
-            ->exists();
-        return $check;
+        $total = $this->users()->count();
+        return $total;
     }
 
     public function getTotalTimeAttribute()

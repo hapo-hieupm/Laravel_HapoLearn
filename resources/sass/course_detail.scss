@@ -1,10 +1,17 @@
 @import 'variables';
 
 .course_detail {
+  background: #F2F2F2;
+
   .txt-path {
     background: #E9E7E7;
     letter-spacing: -0.02em;
     @include text(16px/20px 'UTM BryantLG', $pri_text_color);
+  }
+
+  .ava {
+    width: 770px;
+    height: 439px;
   }
 
   .description {
@@ -70,6 +77,17 @@
   }
 }
 
+.button-primary {
+  letter-spacing: -0.05em;
+  -webkit-text-stroke: 0.3px #FFFFFF;
+  @include text (bold 18px/22px 'UTM BryantLG', #FFFFFF);
+  @include primaryBtn($primary_color, 0.25rem 0.5rem, inset 0 1.5px 2px #6F8710, 22px);
+
+  &:hover {
+  font-size: 20px;
+  }
+}
+
 .other-course {
   thead {
     background: #B2D235;
@@ -86,17 +104,6 @@
     &:hover {
     color: $primary_color;
     }
-  }
-
-  .button {
-    letter-spacing: -0.05em;
-    -webkit-text-stroke: 0.3px #FFFFFF;
-    @include text (bold 18px/22px 'UTM BryantLG', #FFFFFF);
-    @include primaryBtn($primary_color, 0.25rem 0.5rem, inset 0px 1.5px 2px #6F8710, 22px);
-  }
-
-  .button:hover {
-    font-size: 20px;
   }
 }
 

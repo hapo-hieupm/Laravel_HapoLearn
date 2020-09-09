@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-    <div class="course_detail">
+    <div class="course_detail container">
         <div class="d-flex txt-path">
             <a class="txt-path" href="/">Home</a>
             >
@@ -10,7 +10,7 @@
         </div>
         <div class="d-flex">
             <div class="col-9">
-                <img src="{{ ($courseDetail->ava == null) ? asset('storage/ava_courses/php.png') : asset('/storage/ava_courses/' . $courseDetail->ava) }}">
+                <img class="ava" src="{{ ($courseDetail->ava == null) ? asset('storage/ava_courses/php.png') : asset('/storage/ava_courses/' . $courseDetail->ava) }}">
             </div>
             <div class="col-3 d-flex flex-column description">
                 <div class="title">Descriptions course</div>
@@ -23,53 +23,53 @@
                 <table class="table parameter">
                     <thead>
                         <tr>
-                            <th class="txt" id="lesson">
-                                Lessons
-                            </th>
-                            <th class="txt-data" id="teacher">Teacher</th>
-                            <th class="txt-data" id="review">Reviews</th>
+                            <th><a href="#" id="lesson" class="">Lessons</a></th>
+                            <th><a href="#" id="teacher" class="">Teacher</a></th>
+                            <th><a href="#" id="review" class="">Reviews</a></th>
                         </tr>
                     </thead>
+                </table>
+                <table class="table parameter mt-n3">
                     <tbody id="lesson_body">
                         <tr>
                             <td>
-                                <form action="{{ route('courses') }}" method="GET" role="search">
+                                <form action="{{ route('course', $courseDetail->id) }}" method="GET" role="search">
                                     {{ csrf_field() }}
-                                    <div class="input-group d-flex ml-5">
-                                        <input type="text" class="form-control" name="keyword" placeholder="Search..."> 
-                                        <div class="input-group-btn ml-5">
-                                            <button type="submit">
-                                                <i class="fa fa-search ml-n5" type="submit"></i>
+                                    <div class="input-group d-flex col-9">
+                                        <input type="text" class="form-control border-right-0 border" name="keyword" placeholder="Search...">
+                                        <span class="input-group-append">
+                                            <button class="btn border-left-0 border" type="submit">
+                                                <i class="fa fa-search"></i>
                                             </button>
-                                            <button type="submit" class="btn-search">
-                                                Tìm kiếm
-                                            </button>
-                                        </div>
-                                    </div>
+                                        </span>
+                                        <button class="btn btn-search border-left-0 border ml-3" type="submit">
+                                            Tìm kiếm
+                                        </button>
                                 </form>
                             </td>
-                            <td>
-                                <a class="button" href="#">Tham gia khoá học</a>
+                            <td class="ml-auto">
+                                <a class="button-primary pr-3" href="#">Tham gia khoá học</a>
                             </td>
                         </tr>
                         @foreach($lessons as $lesson)
                             <tr>
-                                <td>
-                                    <a class="" href="{{ Route('lesson', $lesson->id) }}">{{ $lesson->name }}</a>
+                                <td>      
+                                    <a class="pl-3" href="#">{{ $lesson->name }}</a>
                                 </td>
                                 <td>
-                                    <a class="button" href="{{ Route('lesson', $lesson->id) }}">Learn</a>
+                                    <a class="pr-3" href="#">Learn</a>
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                     <tbody id="teacher_body">
-                        @include('courses.teacher');
+                        @include('courses.teacher')
                     </tbody>
                     <tbody id="review_body">
-                        @include('courses.review');
+                        @include('courses.review')
                     </tbody>
                 </table>
+               
             </div>
             <div class="col-3 d-flex flex-column">
                 <table class="table parameter">
@@ -88,7 +88,7 @@
                                 Lessons
                             </td>
                             <td class="txt-data">:</td>
-                            <td class="txt-data">{{ $courseDetail->num_of_lesson }}/td>
+                            <td class="txt-data">{{ $courseDetail->num_of_lesson }}</td>
                         </tr>
                         <tr>
                             <td class="txt">
@@ -116,8 +116,12 @@
                         </tr>
                     </tbody>
                 </table>
-                @include('courses.other_course');
+                
+               <!-- other_courses -->
             </div>
+           
         </div>
+        
     </div>
+    
 @endsection

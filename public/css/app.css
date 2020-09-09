@@ -54576,16 +54576,29 @@ footer .div-content-back {
   font: 16px/20px "UTM BryantLG";
   color: #505353 !important;
 }
-.course_detail hr {
+.course_detail .description {
+  background: #FFFFFF;
+  border: 1px solid #D1D1D1;
+  box-sizing: border-box;
+}
+.course_detail .description .ava {
+  width: 770px;
+  height: 439px;
+}
+.course_detail .description hr {
   border: 1px solid #B2D235;
 }
-.course_detail .course_title {
+.course_detail .description .title {
   letter-spacing: -0.02em;
   -webkit-text-stroke: 0.5px #505353;
   font: bold 25px/31px "UTM BryantLG";
   color: #505353 !important;
 }
-.course_detail .descript {
+.course_detail .description .txt, .course_detail .description .paremeter .txt-data, .course_detail .paremeter .description .txt-data {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 13;
+  -webkit-box-orient: vertical;
   text-align: justify;
   letter-spacing: -0.02em;
   font: bold 18px/26px "UTM BryantLG";

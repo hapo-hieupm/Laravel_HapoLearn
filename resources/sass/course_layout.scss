@@ -11,9 +11,17 @@
   img {
     width: 100%;
   }
+
+  .form-control:focus {
+    outline: 0 !important;
+    border-color: initial;
+    box-shadow: none;
+}
 }
 
 .list_course {
+  background: #E5E5E5;
+  
   .course {
     background: #FFFFFF;
     border: 1px solid #F1F1F1;

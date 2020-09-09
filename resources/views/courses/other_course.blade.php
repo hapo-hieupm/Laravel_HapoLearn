@@ -5,7 +5,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach $courseDetail->other_courses as $other_course
+        @foreach($courseDetail->other_courses as $other_course)
             <tr>
                 <td>
                     <a class="txt-body" href="#">{{ $other_courses->index }}. {{ $other_course->name }}</a>

@@ -11,16 +11,16 @@
                 </div>
                 <form action="{{ route('courses') }}" method="GET" role="search">
                     {{ csrf_field() }}
-                    <div class="input-group d-flex ml-5">
-                        <input type="text" class="form-control" name="keyword" placeholder="Search courses"> 
-                        <div class="input-group-btn ml-5">
-                            <button type="submit">
-                                <i class="fa fa-search ml-n5" type="submit"></i>
+                    <div class="input-group d-flex ml-3">
+                        <input type="text" class="form-control border-right-0 border" name="keyword" placeholder="Search...">
+                        <span class="input-group-append">
+                            <button class="btn border-left-0 border" type="submit">
+                                <i class="fa fa-search"></i>
                             </button>
-                            <button type="submit" class="btn-search">
-                                Tìm kiếm
-                            </button>
-                        </div>
+                        </span>
+                        <button class="btn btn-search border-left-0 border ml-3" type="submit">
+                            Tìm kiếm
+                        </button>
                     </div>
                 </form>
             </div>
