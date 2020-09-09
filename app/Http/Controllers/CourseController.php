@@ -39,12 +39,11 @@ class CourseController extends Controller
     {
         $allRequest  = $request->all();
         if ($request->hasFile('ava')) {
-            $path = Storage::putFile('ava', $request->file('ava'));
             $destinationPath = 'public/ava_courses/';
             $image = $request->file('ava');
             $imageName = $image->getClientOriginalName();
             $path = $request->file('ava')->storeAs($destinationPath, $imageName);
-            $allRequest['ava'] = $imageName;
+            $allRequest['ava'] = $path;
         }
         Course::create($allRequest);
         return redirect()->route('courses')->with('notice', __('notice.success.store'));
@@ -54,7 +53,7 @@ class CourseController extends Controller
     public function edit($id)
     {
         $course = Course::findOrFail($id);
-        return view('courses.edit', compact('course')); 
+        return view('courses.edit', compact('course'));
     }
 
     public function update(CourseValidation $request, $id)

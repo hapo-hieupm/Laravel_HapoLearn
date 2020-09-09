@@ -1,10 +1,16 @@
 @extends('layouts.layout')
 @section('content')
     @if(isset($courses))
+<<<<<<< HEAD
     <div class="bg-list-course">
         <div class="container list-course d-flex flex-column pt-5 px-0">
             <div class="a col-12 d-flex align-items-center px-0">
                 <div class="filter">
+=======
+        <div class="container list_course d-flex flex-column">
+            <div class="col-12 d-flex align-items-center">
+                <div class="filter" id="filter">
+>>>>>>> 1f4c49456c9b72c03dcdcfcfa6035a40fadad6f5
                     <div class="d-flex align-items-center text-filter px-2 py-2">
                         <i class="fa fa-sliders pr-2" aria-hidden="true"></i>
                         Filter
@@ -25,8 +31,13 @@
                     </div>
                 </form>
             </div>
+<<<<<<< HEAD
             <div class="filter-bar">
                 <div class="box  mt-3 col-12 px-0 px-3 pt-3">
+=======
+            <div class="filter-bar mt-3 col-12" id="filter_bar">
+                <div class="box px-3 pt-3">
+>>>>>>> 1f4c49456c9b72c03dcdcfcfa6035a40fadad6f5
                     <form action="{{ route('courses') }}" method="GET" role="filter">
                         {{ csrf_field() }}
                         <div class="d-flex flex-wrap form-group">
