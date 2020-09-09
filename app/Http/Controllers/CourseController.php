@@ -4,28 +4,30 @@ namespace app\Http\Controllers;
 
 use App\Model\Course;
 use App\Http\Validations\CourseValidation;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Session;
+use App\Filter\CourseFilter;
 
 class CourseController extends Controller
 {
-    public function index()
+    public function index(CourseFilter $filters)
     {
-        $courses = Course::paginate(config('pagination.course'));
-        return view('courses.list_course', compact('courses'));
+        $courses = Course::filter($filters)->paginate(config('pagination.course'));
+        if (count($courses) > 0) {
+            return view('courses.list_course', compact('courses'));
+        } else {
+            return view('courses.list_course', compact('courses'))->withMessage('notice', __('notice.failed.search'));
+        }
     }
 
-    public function search(CourseValidation $request) 
+    public function show($id)
     {
-        $q = $request->all();
-        $courses = Course::where('name', 'LIKE', '%'.$q.'%')
-                        ->orwhere('description', 'LIKE', '%'.$key.'%')
-                        ->paginate(config('pagination.course'));
-        if (count($course) > 0)
-            return view('courses.list_course', compact('courses'))->withDetails($course)->withQuery ( $q );
-        else 
-            return view('courses.list_course', compact('courses'))->withMessage('notice', __('notice.failed.search'));
+        $courseDetail = Course::findOrFail($id);
+        $lessons = $courseDetail->lessons()
+            ->paginate(config('pagination.course'));
+        return view('courses.course_detail', compact('courseDetail', 'lessons', 'id'));
     }
 
     public function create()
@@ -34,15 +36,14 @@ class CourseController extends Controller
     }
 
     public function store(CourseValidation $request)
-    {   
+    {
         $allRequest  = $request->all();
-        if($request->hasFile('ava')) {
-            $path = Storage::putFile('ava', $request->file('ava'));
+        if ($request->hasFile('ava')) {
             $destinationPath = 'public/ava_courses/';
             $image = $request->file('ava');
             $imageName = $image->getClientOriginalName();
             $path = $request->file('ava')->storeAs($destinationPath, $imageName);
-            $allRequest['ava'] = $imageName;
+            $allRequest['ava'] = $path;
         }
         Course::create($allRequest);
         return redirect()->route('courses')->with('notice', __('notice.success.store'));
@@ -51,30 +52,30 @@ class CourseController extends Controller
     
     public function edit($id)
     {
-        $Course = Course::find($id);
-        return view('courses.edit', compact('Course'));   
+        $course = Course::findOrFail($id);
+        return view('courses.edit', compact('course'));
     }
 
     public function update(CourseValidation $request, $id)
     {
-        $Course = $request->all();
+        $course = $request->all();
         if ($request->hasFile('ava')) {
             $file = $request->ava;
             $ava = uniqid() . "_" . $file->getClientOriginalName();
-            $oldAva = Course::find($id)->ava;
+            $oldAva = Course::findOrFail($id)->ava;
             Storage::delete('public/ava_courses/' . $oldAva);
             $request->file('ava')->storeAs('public/ava_courses/', $ava);
-            $Course['ava'] = $ava;
+            $course['ava'] = $ava;
         }
-        Course::findOrFail($id)->update($Course);
+        Course::findOrFail($id)->update($course);
         return redirect()->route('courses')->with('notice', __('notice.success.update'));
     }
 
     
     public function destroy($id)
     {
-        $Course = Course::find($id);
-        $Course->delete();
+        $course = Course::findOrFail($id);
+        $course->delete();
         return redirect()->route('courses')->with('notice', __('notice.success.delete'));
     }
 }

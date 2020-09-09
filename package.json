@@ -27,6 +27,7 @@
         "webpack": "^4.44.1"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.14.0",
         "admin-lte": "^3.0.5",
         "font-awesome": "^4.7.0",
         "slick-carousel": "^1.8.1"

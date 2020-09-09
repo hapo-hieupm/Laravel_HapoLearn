@@ -2,11 +2,11 @@ $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
   
     $('.mess-btn').click(function() {
-          $('.mess-box').toggle();
+        $('.mess-box').toggle();
     });
   
     $('.btn-close').click(function() {
-          $('.mess-box').hide();
+        $('.mess-box').hide();
     });
   
     $('.feedback-slick').slick({
@@ -28,5 +28,8 @@ $(document).ready(function(){
         }
       ]
     });
+
+    $("#filter").click(function() {
+        $("#filterBar").toggle();
+    });
   });
-  

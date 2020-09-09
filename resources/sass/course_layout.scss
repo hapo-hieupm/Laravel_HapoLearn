@@ -14,47 +14,100 @@
 }
 
 .list_course {
-  .course-title {
-    letter-spacing: -0.05em;
-    -webkit-text-stroke: 0.3px $pri_text_color;
-    @include text(bold 25px/31px 'UTM BryantLG', $pri_text_color);
-  }
-
-  .ava {
-    width: 89px;
-    height: 89px;
-    border-radius: 80px;
-  }
-
-  .txt-descript {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    letter-spacing: -0.05em;
-    -webkit-text-stroke: 0.2px $pri_text_color_light;
-    @include text(18px/25px 'UTM BryantLG', $pri_text_color_light);
-  }
-
-  .button {
-    letter-spacing: -0.05em;
-    -webkit-text-stroke: 0.3px #FFFFFF;
-    @include text (bold 18px/22px 'UTM BryantLG', #FFFFFF);
-    @include primaryBtn($primary_color, 0.5rem 1rem, inset 0px 1.5px 2px #6F8710, 22px);
-  }
- 
-  hr {
+  .course {
+    background: #FFFFFF;
     border: 1px solid #F1F1F1;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+
+    .ava {
+      width: 89px;
+      height: 89px;
+      border-radius: 80px;
+    }
+
+    .course-title {
+      letter-spacing: -0.05em;
+      -webkit-text-stroke: 0.3px $pri_text_color;
+      @include text(bold 25px/31px 'UTM BryantLG', $pri_text_color);
+    }
+
+    .txt-descript {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      letter-spacing: -0.05em;
+      -webkit-text-stroke: 0.2px $pri_text_color_light;
+      @include text(18px/25px 'UTM BryantLG', $pri_text_color_light);
+    }
+
+    .button {
+      letter-spacing: -0.05em;
+      -webkit-text-stroke: 0.3px #FFFFFF;
+      @include text (bold 18px/22px 'UTM BryantLG', #FFFFFF);
+      @include primaryBtn($primary_color, 0.5rem 1rem, inset 0 1.5px 2px #6F8710, 22px);
+    }
+  
+    hr {
+      border: 1px solid #F1F1F1;
+    }
+    
+    .text-title {
+      @extend .course-title;
+      -webkit-text-stroke: 0;
+    }
+
+    .text-number {
+      letter-spacing: -0.05em;
+      -webkit-text-stroke: 1px $primary_color;
+      @include text(bold 30px/37px 'UTM BryantLG', $primary_color)
+    }
+  }
+
+  .filter,
+  .box {
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+  }
+
+  .filter {
+    cursor: pointer;
+
+    .text-filter {
+      @include text(bold 16px/22px 'Open Sans', $pri_text_color);
+    }
+
+    .fa.fa-sliders {
+      font-size: 20px;
+      line-height: 23px;
+    }
+  }
+
+  .btn-search {
+    border: 1px solid $primary_color;
+    @include text(bold 15px/20px 'Open Sans', #FFFFFF);
+    @include primaryBtn($primary_color, 0.5rem, none, 5px);
   }
   
-  .text-title {
-    @extend .course-title;
-    -webkit-text-stroke: 0;
-  }
+  .filter-bar {
+    // display: none;
+    
+    .txt-title {
+      @include text(bold 16px/22px 'Open Sans', $pri_text_color);
+    }
+    .txt {
+      @include text(14px/19px 'Open Sans', $pri_text_color);
+    }
 
-  .text-number {
-    letter-spacing: -0.05em;
-    -webkit-text-stroke: 1px $primary_color;
-    @include text(bold 30px/37px 'UTM BryantLG', $primary_color)
+    .button {
+      @include primaryBtn(#E5E6E7, 0.4rem, none, 2px);
+
+      &.active {
+        color: #FFFFFF !important;
+        background-color: $primary_color;
+      }
+    }
   }
 }

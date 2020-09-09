@@ -8,6 +8,7 @@ use App\Model\Lesson;
 use App\Model\Feedback;
 use App\Model\Tag;
 use App\Model\User;
+use App\Filter\QueryFilter;
 
 class Course extends Model
 {
@@ -41,9 +42,32 @@ class Course extends Model
         return $this->belongstoMany(User::class);
     }
 
-    public function lessonsCount() {
-        return $this->lessons()
-            ->selectRaw('id, count(*) as total')
-            ->groupBy('id');
+    public function scopeFilter($query, QueryFilter $filters)
+    {
+        return $filters->apply($query);
+    }
+
+    public function getNumOfLessonAttribute()
+    {
+        return $this->lessons()->count();
+    }
+
+    public function getPriceCourseAttribute()
+    {
+        $price = $this->price;
+
+        if ($price == null) {
+            $price = 'Free';
+        } else {
+            $price .= "$";
+        }
+
+        return $price;
+    }
+
+    public function getOtherCourseAttribute()
+    {
+        return $this->where('id', '!=', $this->id)
+                    ->take(config('pagination.course'))->get();
     }
 }

@@ -1,0 +1,22 @@
+@import 'variables';
+
+.page-item {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  .page-link {
+    border-radius: 3px;
+    border: 1px solid $primary_color;
+    background: #FFFFFF;
+    letter-spacing: -0.05em;
+    @include text(bold 18px/25px 'Open Sans', $primary_color);
+  }
+
+  &.active {
+    .page-link {
+      border: 1px solid $primary_color;
+      background: $primary_color;
+      color: #FFFFFF !important;
+    }
+  }
+}
