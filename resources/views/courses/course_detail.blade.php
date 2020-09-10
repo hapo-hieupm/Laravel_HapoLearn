@@ -1,6 +1,5 @@
 @extends('layouts.layout')
 @section('content')
-<<<<<<< HEAD
 <div class="bg-course-detail">
     <div class="course-detail">
         <div class="path">
@@ -11,19 +10,9 @@
                 >
                 <a class="txt-path ml-2" href="/courses/{{ $courseDetail->id }}">Course detail</a>
             </div>
-=======
-    <div class="course_detail">
-        <div class="d-flex txt-path">
-            <a class="txt-path" href="/">Home</a>
-            >
-            <a class="txt-path" href="/courses">All courses</a>
-            >
-            <a class="txt-path" href="/courses/{{ $courseDetail->id }}">Course detail</a>
->>>>>>> 1f4c49456c9b72c03dcdcfcfa6035a40fadad6f5
         </div>
         <div class="container d-flex mt-3 px-0">
             <div class="col-9">
-<<<<<<< HEAD
                 <img class="ava" src="{{ ($courseDetail->ava == null) ? asset('storage/ava_courses/php.png') : asset('/storage/ava_courses/' . $courseDetail->ava) }}">
             </div>
             <div class="col-3 description px-3 pt-3">
@@ -39,14 +28,6 @@
                         </tr>
                     </tbody>
                 </table>
-=======
-                <img src="{{ ($courseDetail->ava == null) ? asset('storage/ava_courses/php.png') : asset('/storage/ava_courses/' . $courseDetail->ava) }}">
-            </div>
-            <div class="col-3 d-flex flex-column description">
-                <div class="title">Descriptions course</div>
-                <hr>
-                <div class="txt">{{ $courseDetail->description }}</div>
->>>>>>> 1f4c49456c9b72c03dcdcfcfa6035a40fadad6f5
             </div>
         </div>
         <div class="container d-flex mt-3 px-0">
