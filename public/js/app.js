@@ -37467,6 +37467,10 @@ $(document).ready(function () {
         document.querySelector("." + li_value).style.display = "block";
       } else if (li_value == "lesson") {
         document.querySelector("." + li_value).style.display = "block";
+      } else if (li_value == "program") {
+        document.querySelector("." + li_value).style.display = "block";
+      } else if (li_value == "description") {
+        document.querySelector("." + li_value).style.display = "block";
       } else {
         console.log("");
       }

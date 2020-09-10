@@ -23435,6 +23435,10 @@ table {
   border: 1px solid #D1D1D1;
 }
 
+.review.item {
+  display: none;
+}
+
 .review .total-box {
   background: #505353;
   border-radius: 5px;
@@ -23469,6 +23473,10 @@ table {
 .review .cmt .ava {
   width: 2.5rem;
   height: 2.5rem;
+}
+
+.teacher.item {
+  display: none;
 }
 
 .main-teacher {
