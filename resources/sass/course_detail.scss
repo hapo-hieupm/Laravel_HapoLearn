@@ -171,6 +171,10 @@ table {
   border: 1px solid #D1D1D1;
 }
 
+.review.item {
+  display: none;
+}
+
 .review {
   .total-box {
     background: $pri_text_color;

@@ -69,10 +69,10 @@
                             {!! $lessons->links() !!}
                         </div>
                     </div>
-                    <div class="teacher item px-0" style="display: none; ">
+                    <div class="teacher item px-0">
                         @include('courses.teacher')
                     </div>
-                    <div class="review item px-0" style="display: none; ">
+                    <div class="review item px-0">
                         @include('courses.review')
                     </div>
                 </div>               
