@@ -1,7 +1,7 @@
 <table class="table tb-other-course">
     <thead>
         <tr>
-            <th>Other Courses</th>
+            <th class="text-center">Other Courses</th>
         </tr>
     </thead>
     <tbody>
@@ -16,8 +16,8 @@
             </tr>
         @endforeach
         <tr>
-            <td>
-                <a class="button" href="#">View all ours courses</a>
+            <td class="text-center py-5">
+                <a class="button-primary" href="#">View all ours courses</a>
             </td>
         </tr>    
     </tbody>

@@ -26,7 +26,7 @@ class CourseController extends Controller
     {
         $courseDetail = Course::findOrFail($id);
         $lessons = $courseDetail->lessons()
-            ->paginate(config('pagination.course'));
+            ->paginate(config('pagination.lesson'));
         return view('courses.course_detail', compact('courseDetail', 'lessons', 'id'));
     }
 

@@ -11,43 +11,31 @@
                 <a class="txt-path ml-2" href="/courses/{{ $courseDetail->id }}">Course detail</a>
             </div>
         </div>
-        <div class="container d-flex mt-3 px-0">
-            <div class="col-9">
-                <img class="ava" src="{{ ($courseDetail->ava == null) ? asset('storage/ava_courses/php.png') : asset('/storage/ava_courses/' . $courseDetail->ava) }}">
+        <div class="container d-flex mt-3">
+            <div class="col-9 bg-ava d-flex justify-content-center align-items-center">
+                <img class="ava" src="{{ ($courseDetail->ava == null) ? asset('storage/ava_courses/html_css.png') : asset('/storage/ava_courses/' . $courseDetail->ava) }}">
             </div>
-            <div class="col-3 description px-3 pt-3">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Descriptions course</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{ $courseDetail->description }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col-3 d-flex flex-column description px-0 ml-2">
+                <div class="title py-3 mx-3">Descriptions course</div>
+                <div class="txt pt-3 mx-3">{{ $courseDetail->description }}</div>
             </div>
         </div>
         <div class="container d-flex mt-3 px-0">
             <div class="col-9">
-                <table class="table parameter">
-                    <thead>
-                        <tr>
-                            <th><a href="#" id="lesson" class="">Lessons</a></th>
-                            <th><a href="#" id="teacher" class="">Teacher</a></th>
-                            <th><a href="#" id="review" class="">Reviews</a></th>
-                        </tr>
-                    </thead>
-                
-                <table class="table parameter mt-n3">
-                    <tbody id="lessonBody">
-                        <tr>
-                            <td>
+                <div class="list-title px-0">
+                    <ul class="nav py-3">
+                        <li data-li="lesson" class="nav-item ml-5 active">Lessons</li>
+                        <li data-li="teacher" class="nav-item ml-5">Teachers</li>
+                        <li data-li="review" class="nav-item ml-5">Reviews</li>
+                    </ul>
+                </div>
+                <div class="more-information px-0">
+                    <div class="lesson item px-0">
+                        <div class="search-lesson d-flex align-items-center py-3"> 
+                            <div class="col-8">  
                                 <form action="{{ route('course', $courseDetail->id) }}" method="GET" role="search">
-                                    {{ csrf_field() }}
-                                    <div class="input-group d-flex col-9">
+                                {{ csrf_field() }}
+                                    <div class="input-group d-flex">                                    
                                         <input type="text" class="form-control border-right-0 border" name="keyword" placeholder="Search...">
                                         <span class="input-group-append">
                                             <button class="btn border-left-0 border" type="submit">
@@ -57,34 +45,37 @@
                                         <button class="btn btn-search border-left-0 border ml-3" type="submit">
                                             Tìm kiếm
                                         </button>
+                                    </div>
                                 </form>
-                            </td>
-                            <td class="ml-auto">
-                                <a class="button-primary pr-3" href="#">Tham gia khoá học</a>
-                            </td>
-                        </tr>
-                        @php 
-                            $index = 0
-                        @endphp
-                        @foreach($lessons as $lesson)
-                            <tr>
-                                <td>      
-                                    <a class="pl-3" href="#">{{ $index +=1 }}. {{ $lesson->name }}</a>
-                                </td>
-                                <td>
-                                    <a class="pr-3" href="#">Learn</a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                    <tbody id="teacherBody">
+                            </div>
+                            <div class="col-4 ml-5 pl-3"> 
+                                <a class="button-primary" href="#">Tham gia khoá học</a>
+                            </div>  
+                        </div>
+                        <div class="tb-lesson"> 
+                            @php 
+                                $index = 0
+                            @endphp
+                            @foreach($lessons as $lesson)
+                                <div class="line d-flex py-2">
+                                    <div class="col-10">      
+                                        <a class="txt" href="#">{{ $index +=1 }}. {{ $lesson->name }}</a>
+                                    </div>
+                                    <div class="col-2">
+                                        <a class="learn-btn" href="#">Learn</a>
+                                    </div>
+                                </div>
+                            @endforeach
+                            {!! $lessons->links() !!}
+                        </div>
+                    </div>
+                    <div class="teacher item px-0" style="display: none; ">
                         @include('courses.teacher')
-                    </tbody>
-                    <tbody id="reviewBody">
+                    </div>
+                    <div class="review item px-0" style="display: none; ">
                         @include('courses.review')
-                    </tbody>
-                </table>
-               
+                    </div>
+                </div>               
             </div>
             <div class="col-3 d-flex flex-column px-0">
                 <table class="table parameter">
