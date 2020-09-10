@@ -22,7 +22,7 @@ class CourseController extends Controller
         }
     }
 
-    public function show($id)
+    public function show($id, Request $request)
     {
         $courseDetail = Course::findOrFail($id);
         $lessons = $courseDetail->lessons();
