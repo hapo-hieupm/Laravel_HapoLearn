@@ -35,7 +35,6 @@
                 <table class="table parameter">
                     <thead>
                         <tr>
-<<<<<<< HEAD
                             <th><a href="#" id="lesson" class="">Lessons</a></th>
                             <th><a href="#" id="teacher" class="">Teacher</a></th>
                             <th><a href="#" id="review" class="">Reviews</a></th>
@@ -74,49 +73,10 @@
                                 </td>
                                 <td>
                                     <a class="pr-3" href="#">Learn</a>
-=======
-                            <th class="txt" id="lesson">
-                                Lessons
-                            </th>
-                            <th class="txt-data" id="teacher">Teacher</th>
-                            <th class="txt-data" id="review">Reviews</th>
-                        </tr>
-                    </thead>
-                    <tbody id="lesson_body">
-                        <tr>
-                            <td>
-                                <form action="{{ route('courses') }}" method="GET" role="search">
-                                    {{ csrf_field() }}
-                                    <div class="input-group d-flex ml-5">
-                                        <input type="text" class="form-control" name="keyword" placeholder="Search..."> 
-                                        <div class="input-group-btn ml-5">
-                                            <button type="submit">
-                                                <i class="fa fa-search ml-n5" type="submit"></i>
-                                            </button>
-                                            <button type="submit" class="btn-search">
-                                                Tìm kiếm
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </td>
-                            <td>
-                                <a class="button" href="#">Tham gia khoá học</a>
-                            </td>
-                        </tr>
-                        @foreach $lessons as $lesson
-                            <tr>
-                                <td>
-                                    <a class="" href="{{ Route('lesson', $lesson->id) }}">{{ $lesson->name }}</a>
-                                </td>
-                                <td>
-                                    <a class="button" href="{{ Route('lesson', $lesson->id) }}">Learn</a>
->>>>>>> 1f4c49456c9b72c03dcdcfcfa6035a40fadad6f5
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
-<<<<<<< HEAD
                     <tbody id="teacherBody">
                         @include('courses.teacher')
                     </tbody>
@@ -125,15 +85,6 @@
                     </tbody>
                 </table>
                
-=======
-                    <tbody id="teacher_body">
-                        @include('courses.teacher');
-                    </tbody>
-                    <tbody id="review_body">
-                        @include('courses.review');
-                    </tbody>
-                </table>
->>>>>>> 1f4c49456c9b72c03dcdcfcfa6035a40fadad6f5
             </div>
             <div class="col-3 d-flex flex-column px-0">
                 <table class="table parameter">
@@ -152,11 +103,7 @@
                                 Lessons
                             </td>
                             <td class="txt-data">:</td>
-<<<<<<< HEAD
                             <td class="txt-data">{{ $courseDetail->num_of_lesson }}</td>
-=======
-                            <td class="txt-data">{{ $courseDetail->num_of_lesson }}/td>
->>>>>>> 1f4c49456c9b72c03dcdcfcfa6035a40fadad6f5
                         </tr>
                         <tr>
                             <td class="txt">
@@ -184,17 +131,10 @@
                         </tr>
                     </tbody>
                 </table>
-<<<<<<< HEAD
                 @include('courses.other_course')
             </div> 
         </div>   
     </div> 
 </div>
-=======
-                @include('courses.other_course');
-            </div>
-        </div>
-    </div>
->>>>>>> 1f4c49456c9b72c03dcdcfcfa6035a40fadad6f5
 @endsection
 

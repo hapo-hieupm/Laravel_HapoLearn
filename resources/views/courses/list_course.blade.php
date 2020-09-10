@@ -25,13 +25,8 @@
                     </div>
                 </form>
             </div>
-<<<<<<< HEAD
             <div class="filter-bar">
-                <div class="box  mt-3 col-12 px-0 px-3 pt-3">
-=======
-            <div class="filter-bar mt-3 col-12" id="filter_bar">
-                <div class="box px-3 pt-3">
->>>>>>> 1f4c49456c9b72c03dcdcfcfa6035a40fadad6f5
+                <div class="box mt-3 col-12 px-0 px-3 pt-3">
                     <form action="{{ route('courses') }}" method="GET" role="filter">
                         {{ csrf_field() }}
                         <div class="d-flex flex-wrap form-group">
