@@ -6,6 +6,8 @@ require('./bootstrap');
 
 // require('slick-carousel/slick/slick');
 
-require('./index');
+// require('./index');
 
-require('./course');
+// require('./course');
+
+require('./login_register');

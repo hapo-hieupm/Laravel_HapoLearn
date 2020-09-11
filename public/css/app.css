@@ -23509,6 +23509,10 @@ table {
   color: #949292;
 }
 
+.register {
+  display: none;
+}
+
 @font-face {
   font-family: "UTM BryantLG";
   src: url("../storage/fonts/UTM_BryantLG.ttf");

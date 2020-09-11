@@ -6,7 +6,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('storage/images/cu.png') }}" rel="icon" sizes="16x16" type="image/gif">
-    <title>Hapo Learn</title>
+    <title>@yield('title')</title>
 </head>
 <body>
     @include('index.header')

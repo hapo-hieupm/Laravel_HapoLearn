@@ -37378,11 +37378,11 @@ module.exports = function(module) {
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // require('admin-lte/dist/js/adminlte.min');
 // require('slick-carousel/slick/slick.min');
 // require('slick-carousel/slick/slick');
+// require('./index');
+// require('./course');
 
 
-__webpack_require__(/*! ./index */ "./resources/js/index.js");
-
-__webpack_require__(/*! ./course */ "./resources/js/course.js");
+__webpack_require__(/*! ./login_register */ "./resources/js/login_register.js");
 
 /***/ }),
 
@@ -37431,88 +37431,26 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/course.js":
-/*!********************************!*\
-  !*** ./resources/js/course.js ***!
-  \********************************/
+/***/ "./resources/js/login_register.js":
+/*!****************************************!*\
+  !*** ./resources/js/login_register.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  $('.filter').click(function () {
-    $('.filter-bar').toggle();
+  $(".tab a").on("click", function (e) {
+    e.preventDefault();
+    $(this).parent().addClass("active");
+    $(this).parent().siblings().removeClass("active");
+    target = $(this).attr("href");
+    $(".tab-content > div").not(target).hide();
+    $(target).fadeIn(600);
   });
-  $('select').on('change', function () {
-    $(this).closest('form').submit();
-  });
-  var li_elements = document.querySelectorAll(".list-title ul li");
-  var item_elements = document.querySelectorAll(".item");
-
-  for (var i = 0; i < li_elements.length; i++) {
-    li_elements[i].addEventListener("click", function () {
-      li_elements.forEach(function (li) {
-        li.classList.remove("active");
-      });
-      this.classList.add("active");
-      var li_value = this.getAttribute("data-li");
-      item_elements.forEach(function (item) {
-        item.style.display = "none";
-      });
-
-      if (li_value == "") {
-        document.querySelector("." + li_value).style.display = "block";
-      } else if (li_value == "teacher") {
-        document.querySelector("." + li_value).style.display = "block";
-      } else if (li_value == "review") {
-        document.querySelector("." + li_value).style.display = "block";
-      } else if (li_value == "lesson") {
-        document.querySelector("." + li_value).style.display = "block";
-      } else if (li_value == "program") {
-        document.querySelector("." + li_value).style.display = "block";
-      } else if (li_value == "description") {
-        document.querySelector("." + li_value).style.display = "block";
-      } else {
-        console.log("");
-      }
-    });
-  }
-
-  ;
-});
-
-/***/ }),
-
-/***/ "./resources/js/index.js":
-/*!*******************************!*\
-  !*** ./resources/js/index.js ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-$(document).ready(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-  $('.mess-btn').click(function () {
-    $('.mess-box').toggle();
-  });
-  $('.btn-close').click(function () {
-    $('.mess-box').hide();
-  });
-  $('.feedback-slick').slick({
-    centerMode: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    prevArrow: $('.left'),
-    nextArrow: $('.right'),
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    responsive: [{
-      breakpoint: 980,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }]
+  $('#password, #confirm_password').on('keyup', function () {
+    if ($('#password').val() == $('#confirm_password').val()) {
+      $('#message').html('Matching').css('color', 'green');
+    } else $('#message').html('Not Matching').css('color', 'red');
   });
 });
 

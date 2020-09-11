@@ -16,6 +16,31 @@ class User extends Authenticatable
     use Notifiable;
     use SoftDeletes;
 
+    const ROLES = [
+        'admin' => 0,
+        'student' => 1,
+    ];
+
+    const ROLE_NAME = [
+        'admin' => 'Admin',
+        'student' => 'Student',
+    ];  
+    
+    public function getRoleNameAttribute()
+    {
+        return self::ROLE_NAME[array_flip(self::ROLES)[$this->role]];
+    }
+
+    public function isAdmin()
+    {
+        return $this->role == self::ROLES['admin'];
+    }
+
+    public function isStudent()
+    {
+        return $this->role == self::ROLES['student'];
+    }
+
     protected $fillable = [
         'name', 'username', 'email', 'ava', 'password', 'role', 'description', 'experience', 'slack', 'facebook'
     ];

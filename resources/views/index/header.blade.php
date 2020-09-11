@@ -17,21 +17,29 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/courses">All Courses</a>
+                    <a class="nav-link" href=" route('courses')">All Courses</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">List Lesson</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Lesson Detail</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login/Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
-                </li>
+                @if(Auth::check())
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item logout">
+                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                        
+                    </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" data-target="#form" href="#">Login/Register</a>
+                    </li>
+                @endif
             </ul>
         </div>
     </nav>
 </header>
+@include('auth.login_register')
