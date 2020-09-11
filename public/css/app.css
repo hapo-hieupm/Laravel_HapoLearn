@@ -23509,6 +23509,27 @@ table {
   color: #949292;
 }
 
+.description.item {
+  display: none;
+}
+.description.item .title {
+  font: normal bold 25px/31px "UTM BryantLG";
+  color: #505353;
+}
+
+.program.item {
+  display: none;
+}
+
+.program .icon {
+  width: 1.13rem;
+  height: 1.5rem;
+}
+.program .title {
+  font: normal bold 25px/31px "UTM BryantLG";
+  color: #505353;
+}
+
 @font-face {
   font-family: "UTM BryantLG";
   src: url("../storage/fonts/UTM_BryantLG.ttf");
