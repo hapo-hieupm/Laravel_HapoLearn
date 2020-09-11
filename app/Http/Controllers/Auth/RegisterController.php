@@ -46,7 +46,7 @@ class RegisterController extends Controller
 
     public function showRegisterForm()
     {
-    	return view('auth.login_register');
+        return view('auth.login_register');
     }
 
     protected function create(array $data)
@@ -61,7 +61,7 @@ class RegisterController extends Controller
   
     public function register(RegisterValidation $request)
     {
-    	$allRequest = $request->all();
+        $allRequest = $request->all();
         if ($this->create($allRequest)) {
             return redirect()->back();
         } else {

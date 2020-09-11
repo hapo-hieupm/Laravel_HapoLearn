@@ -37,12 +37,12 @@ class LoginController extends Controller
         return 'username';
     }
 
-    public function showLoginForm() 
+    public function showLoginForm()
     {
         return view('auth.login_register');
     }
 
-    public function login(LoginValidation $request) 
+    public function login(LoginValidation $request)
     {
         $username = $request->login_username;
         $password = $request->login_password;
