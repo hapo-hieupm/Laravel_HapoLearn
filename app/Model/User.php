@@ -24,7 +24,7 @@ class User extends Authenticatable
     const ROLE_NAME = [
         'admin' => 'Admin',
         'student' => 'Student',
-    ];  
+    ];
     
     public function getRoleNameAttribute()
     {
