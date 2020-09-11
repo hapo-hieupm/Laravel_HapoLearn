@@ -32,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -44,7 +44,8 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function showRegisterForm() {
+    public function showRegisterForm()
+    {
     	return view('auth.login_register');
     }
 
@@ -58,9 +59,10 @@ class RegisterController extends Controller
         ]);
     }
   
-    public function register(RegisterValidation $request) {
+    public function register(RegisterValidation $request)
+    {
     	$allRequest = $request->all();
-        if( $this->create($allRequest)) {
+        if ($this->create($allRequest)) {
             return redirect()->back();
         } else {
             Session::flash('error', 'Đăng ký thành viên thất bại!');

@@ -27,17 +27,6 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    protected function redirectTo()
-    {
-        if (Auth::user()->role == User::ROLES['admin']) {
-            return redirect()->route('admin');
-        }
-
-        if (Auth::user()->role == User::ROLES['student']) {
-            return redirect()->back();
-        }
-    }
-
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -48,22 +37,35 @@ class LoginController extends Controller
         return 'username';
     }
 
-    public function showLoginForm() {
-    	return view('auth.login_register');
+    public function showLoginForm() 
+    {
+        return view('auth.login_register');
     }
 
-    public function login(LoginValidation $request) {
+    public function login(LoginValidation $request) 
+    {
         $username = $request->login_username;
         $password = $request->login_password;
-        if( Auth::attempt(['username' => $username, 'password' => $password])) {
-            $this->redirectTo();
+        if (Auth::attempt(['username' => $username, 'password' => $password])) {
+            if (Auth::user()->role == User::ROLES['admin']) {
+                return redirect()->route('admin');
+            }
+    
+            if (Auth::user()->role == User::ROLES['student']) {
+                if ($request->id) {
+                    return redirect()->route('course', $request->id);
+                } else {
+                    return redirect()->route('index');
+                }
+            }
         } else {
             Session::flash('error', 'Username hoặc mật khẩu không đúng!');
             return redirect('login');
         }
     }
 
-    public function logout() {
+    public function logout()
+    {
         Auth::logout();
         return redirect('/');
     }
