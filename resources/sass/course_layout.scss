@@ -11,9 +11,19 @@
   img {
     width: 100%;
   }
+
+  .form-control:focus {
+    outline: 0 !important;
+    border-color: initial;
+    box-shadow: none;
+  }
 }
 
-.list_course {
+.bg-list-course {
+  background: #E5E5E5;
+}
+
+.list-course {
   .course {
     background: #FFFFFF;
     border: 1px solid #F1F1F1;
@@ -100,7 +110,7 @@
   }
   
   .filter-bar {
-    // display: none;
+    display: none;
     
     .txt-title {
       @include text(bold 16px/22px 'Open Sans', $pri_text_color);

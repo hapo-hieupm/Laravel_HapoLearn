@@ -22,11 +22,15 @@ class CourseController extends Controller
         }
     }
 
-    public function show($id)
+    public function show($id, Request $request)
     {
         $courseDetail = Course::findOrFail($id);
-        $lessons = $courseDetail->lessons()
-            ->paginate(config('pagination.course'));
+        $lessons = $courseDetail->lessons();
+        $keyword = $request->keyword;
+        if ($keyword) {
+            $lessons = $lessons->where('name', 'like', "%".$keyword."%");
+        }
+        $lessons = $lessons->paginate(config('pagination.lesson'));
         return view('courses.course_detail', compact('courseDetail', 'lessons', 'id'));
     }
 

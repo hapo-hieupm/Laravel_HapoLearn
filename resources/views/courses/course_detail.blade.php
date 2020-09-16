@@ -1,77 +1,83 @@
 @extends('layouts.layout')
 @section('content')
-    <div class="course_detail">
-        <div class="d-flex txt-path">
-            <a class="txt-path" href="/">Home</a>
-            >
-            <a class="txt-path" href="/courses">All courses</a>
-            >
-            <a class="txt-path" href="/courses/{{ $courseDetail->id }}">Course detail</a>
-        </div>
-        <div class="d-flex">
-            <div class="col-9">
-                <img src="{{ ($courseDetail->ava == null) ? asset('storage/ava_courses/php.png') : asset('/storage/ava_courses/' . $courseDetail->ava) }}">
-            </div>
-            <div class="col-3 d-flex flex-column description">
-                <div class="title">Descriptions course</div>
-                <hr>
-                <div class="txt">{{ $courseDetail->description }}</div>
+<div class="bg-course-detail">
+    <div class="course-detail">
+        <div class="path">
+            <div class="container d-flex px-0 py-2">
+                <a class="txt-path mx-2" href="/">Home</a>
+                >
+                <a class="txt-path mx-2" href="/courses">All courses</a>
+                >
+                <a class="txt-path ml-2" href="/courses/{{ $courseDetail->id }}">Course detail</a>
             </div>
         </div>
-        <div class="d-flex">
+        <div class="container d-flex mt-3">
+            <div class="col-9 bg-ava d-flex justify-content-center align-items-center">
+                <img class="ava" src="{{ ($courseDetail->ava == null) ? asset('storage/ava_courses/html_css.png') : asset('/storage/ava_courses/' . $courseDetail->ava) }}">
+            </div>
+            <div class="col-3 d-flex flex-column description px-0 ml-2">
+                <div class="title py-3 mx-3">Descriptions course</div>
+                <div class="txt pt-3 mx-3">{{ $courseDetail->description }}</div>
+            </div>
+        </div>
+        <div class="container d-flex mt-3 px-0">
             <div class="col-9">
-                <table class="table parameter">
-                    <thead>
-                        <tr>
-                            <th class="txt" id="lesson">
-                                Lessons
-                            </th>
-                            <th class="txt-data" id="teacher">Teacher</th>
-                            <th class="txt-data" id="review">Reviews</th>
-                        </tr>
-                    </thead>
-                    <tbody id="lesson_body">
-                        <tr>
-                            <td>
-                                <form action="{{ route('courses') }}" method="GET" role="search">
-                                    {{ csrf_field() }}
-                                    <div class="input-group d-flex ml-5">
-                                        <input type="text" class="form-control" name="keyword" placeholder="Search..."> 
-                                        <div class="input-group-btn ml-5">
-                                            <button type="submit">
-                                                <i class="fa fa-search ml-n5" type="submit"></i>
+                <div class="list-title px-0">
+                    <ul class="nav py-3">
+                        <li data-li="lesson" class="nav-item ml-5 active">Lessons</li>
+                        <li data-li="teacher" class="nav-item ml-5">Teachers</li>
+                        <li data-li="review" class="nav-item ml-5">Reviews</li>
+                    </ul>
+                </div>
+                <div class="more-information px-0">
+                    <div class="lesson item px-0">
+                        <div class="search-lesson d-flex align-items-center py-3"> 
+                            <div class="col-8">  
+                                <form action="{{ route('course', $courseDetail->id) }}" method="GET" role="search">
+                                {{ csrf_field() }}
+                                    <div class="input-group d-flex">                                    
+                                        <input type="text" class="form-control border-right-0 border" name="keyword" placeholder="Search...">
+                                        <span class="input-group-append">
+                                            <button class="btn border-left-0 border" type="submit">
+                                                <i class="fa fa-search"></i>
                                             </button>
-                                            <button type="submit" class="btn-search">
-                                                Tìm kiếm
-                                            </button>
-                                        </div>
+                                        </span>
+                                        <button class="btn btn-search border-left-0 border ml-3" type="submit">
+                                            Tìm kiếm
+                                        </button>
                                     </div>
                                 </form>
-                            </td>
-                            <td>
-                                <a class="button" href="#">Tham gia khoá học</a>
-                            </td>
-                        </tr>
-                        @foreach $lessons as $lesson
-                            <tr>
-                                <td>
-                                    <a class="" href="{{ Route('lesson', $lesson->id) }}">{{ $lesson->name }}</a>
-                                </td>
-                                <td>
-                                    <a class="button" href="{{ Route('lesson', $lesson->id) }}">Learn</a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                    <tbody id="teacher_body">
-                        @include('courses.teacher');
-                    </tbody>
-                    <tbody id="review_body">
-                        @include('courses.review');
-                    </tbody>
-                </table>
+                            </div>
+                            <div class="col-4 ml-5 pl-3"> 
+                                <a class="button-primary" href="#">Tham gia khoá học</a>
+                            </div>  
+                        </div>
+                        <div class="tb-lesson"> 
+                            @php 
+                                $index = 0
+                            @endphp
+                            @foreach($lessons as $lesson)
+                                <div class="line d-flex py-2">
+                                    <div class="col-10">      
+                                        <a class="txt" href="#">{{ $index +=1 }}. {{ $lesson->name }}</a>
+                                    </div>
+                                    <div class="col-2">
+                                        <a class="learn-btn" href="#">Learn</a>
+                                    </div>
+                                </div>
+                            @endforeach
+                            {!! $lessons->links() !!}
+                        </div>
+                    </div>
+                    <div class="teacher item px-0">
+                        @include('courses.teacher')
+                    </div>
+                    <div class="review item px-0">
+                        @include('courses.review')
+                    </div>
+                </div>               
             </div>
-            <div class="col-3 d-flex flex-column">
+            <div class="col-3 d-flex flex-column px-0">
                 <table class="table parameter">
                     <tbody>
                         <tr>
@@ -88,7 +94,7 @@
                                 Lessons
                             </td>
                             <td class="txt-data">:</td>
-                            <td class="txt-data">{{ $courseDetail->num_of_lesson }}/td>
+                            <td class="txt-data">{{ $courseDetail->num_of_lesson }}</td>
                         </tr>
                         <tr>
                             <td class="txt">
@@ -116,8 +122,10 @@
                         </tr>
                     </tbody>
                 </table>
-                @include('courses.other_course');
-            </div>
-        </div>
-    </div>
+                @include('courses.other_course')
+            </div> 
+        </div>   
+    </div> 
+</div>
 @endsection
+
