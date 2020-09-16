@@ -13,3 +13,5 @@ yarn-error.log
 /public/js/*.txt
 resources/js/app.js
 resources/sass/app.scss
+public/css/app.css
+public/js/app.js
