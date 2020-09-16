@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 Route::get('/admin', function () {
     return view('layouts.admin');
-});
+})->name('admin');
 
 Auth::routes();
 
