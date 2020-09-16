@@ -44,11 +44,6 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function showRegisterForm()
-    {
-        return view('auth.login_register');
-    }
-
     protected function create(array $data)
     {
         return User::create([
