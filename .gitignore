@@ -14,4 +14,4 @@ yarn-error.log
 resources/js/app.js
 resources/sass/app.scss
 public/css/app.css
-/home/jan/laravel-7-scaffold/public/js/app.js
+public/js/app.js

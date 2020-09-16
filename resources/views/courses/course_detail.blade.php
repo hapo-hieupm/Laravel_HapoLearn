@@ -59,10 +59,10 @@
                             @foreach($lessons as $lesson)
                                 <div class="line d-flex py-2">
                                     <div class="col-10">      
-                                        <a class="txt" href="#">{{ $index +=1 }}. {{ $lesson->name }}</a>
+                                        <a class="txt" href="{{ route('lesson', [ $courseDetail->id, $lesson->id ]) }}">{{ $index +=1 }}. {{ $lesson->name }}</a>
                                     </div>
                                     <div class="col-2">
-                                        <a class="learn-btn" href="#">Learn</a>
+                                        <a class="learn-btn" href="{{ route('lesson', [ $courseDetail->id, $lesson->id ]) }}">Learn</a>
                                     </div>
                                 </div>
                             @endforeach

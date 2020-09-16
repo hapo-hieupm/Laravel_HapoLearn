@@ -34,6 +34,13 @@ class CourseController extends Controller
         return view('courses.course_detail', compact('courseDetail', 'lessons', 'id'));
     }
 
+    public function showLesson($courseId, $lessonId)
+    {
+        $courseDetail = Course::findOrFail($courseId);
+        $lesson = $courseDetail->lessons()->findOrFail($lessonId);
+        return view('courses.lesson_detail', compact('courseDetail', 'lesson'));
+    }
+
     public function create()
     {
         return view('courses.create');

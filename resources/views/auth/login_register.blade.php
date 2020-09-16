@@ -24,8 +24,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content"> 
             <ul class="tab-group">
-                <li class="tab"><a href="#login">Log In</a></li>
-                <li class="tab active"><a href="#register">Register</a></li>
+                <li class="tab active"><a href="#login">Log In</a></li>
+                <li class="tab"><a href="#register">Register</a></li>
             </ul>  
             <div class="tab-content">
                 <div class="login" id="login">   
