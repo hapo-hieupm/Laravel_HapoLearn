@@ -1,5 +1,5 @@
 @extends('layouts.layout')
 @section('title','Hapo Learn')
 @section('content')
-    @include('login_register.blade.php')
+    @include('auth.login_register')
 @endsection

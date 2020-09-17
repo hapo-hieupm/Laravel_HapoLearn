@@ -13,7 +13,7 @@
                 <form action="{{ route('courses') }}" method="GET" role="search">
                     {{ csrf_field() }}
                     <div class="input-group d-flex ml-3">
-                        <input type="text" class="form-control border-right-0 border" name="keyword" placeholder="Search...">
+                        <input type="text" class="form-control border-right-0 border" name="keyword" placeholder="Search..." value="{{ old('keyword') }}">
                         <span class="input-group-append">
                             <button class="btn btn-light border-left-0 border" type="submit">
                                 <i class="fa fa-search"></i>

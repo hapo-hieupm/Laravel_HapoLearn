@@ -1,0 +1,24 @@
+.description.item {
+    display: none;
+
+    .title {
+        font: normal bold 25px/31px 'UTM BryantLG';
+        color: $pri_text_color;
+    }
+}
+
+.program.item {
+    display: none;
+}
+
+.program {
+    .icon {
+        width: 1.13rem;
+        height: 1.5rem;
+    }
+
+    .title {
+        font: normal bold 25px/31px 'UTM BryantLG';
+        color: $pri_text_color;
+    }
+}

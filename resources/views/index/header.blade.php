@@ -33,7 +33,7 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target="#form" href="#">Login/Register</a>
+                        <a class="nav-link" data-toggle="modal" data-target="#loginModal" href="#">Login/Register</a>
                     </li>
                 @endif
             </ul>

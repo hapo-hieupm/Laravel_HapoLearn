@@ -98,4 +98,9 @@ class Course extends Model
         $time = $this->lessons()->sum('time');
         return $time;
     }
+
+    public function isStudent()
+    {
+        return $this->users()->exsits(); 
+    }
 }

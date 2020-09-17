@@ -29,13 +29,55 @@
                     </div>
                     <div class="more-information px-0">
                         <div class="description item px-0">
-                            
+                            <div class="title">Descriptions lesson</div>
+                            <div class="text">
+                                {{ $lesson->description }}
+                            </div>
+                            <div class="title">Requirements</div>
+                            <div class="text">
+                                {{ $lesson->requirement }}
+                            </div>
+                            <div class="text d-flex align-items-center">
+                                <div class="title pr-4">Tag:</div> {{ $courseDetail->tag_name }}
+                            </div>
                         </div>
                         <div class="teacher item px-0">
                             @include('courses.teacher')
                         </div>
                         <div class="program item px-0">
-                            
+                            <div class="title py-5">Program</div>
+                            <div class="lesson-program d-flex flex-column">
+                                <div class="py-4">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="d-flex">
+                                            <img src="{{ asset('storage/images/icon_doc.png') }}" class="icon">
+                                            <div class="col-2 p-0 ml-2">Lesson</div>
+                                            <div class="m-0 col-9">Program learn HTML/CSS</div>
+                                        </div>
+                                        <button class="btn btn-learn">Preview</button>
+                                    </div>
+                                </div>
+                                <div class="py-4">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="d-flex">
+                                            <img src="{{ asset('storage/images/icon_pdf.png') }}" class="icon">
+                                            <div class="col-2 p-0 ml-2">PDF</div>
+                                            <div class="m-0 col-9">Download course slides</div>
+                                        </div>
+                                        <button class="btn btn-learn">Preview</button>
+                                    </div>
+                                </div>
+                                <div class="py-4">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="d-flex">
+                                            <img src="{{ asset('storage/images/icon_video.png') }}" class="icon">  
+                                            <div class="col-2 p-0 ml-2">Video</div>
+                                            <div class="m-0 col-9">Download course videos</div>
+                                        </div>
+                                        <button class="btn btn-learn">Preview</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="review item px-0">
                             @include('courses.review')
