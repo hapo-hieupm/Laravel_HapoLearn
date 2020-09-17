@@ -12,20 +12,6 @@ class TagsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name' => 'beginer',
-        ]);
-        DB::table('users')->insert([
-            'name' => 'web',
-        ]);
-        DB::table('users')->insert([
-            'name' => 'html',
-        ]);
-        DB::table('users')->insert([
-            'name' => 'css',
-        ]);
-        DB::table('users')->insert([
-            'name' => 'ruby',
-        ]);
+        factory(App\course\Tag::class, 20)->create();
     }
 }
