@@ -5,18 +5,18 @@
     <div class="d-flex flex-md-row flex-column mb-xl-5 mb-md-4">
         <div class="d-flex flex-column align-items-center mx-md-5 px-xl-5 my-md-3 my-5">
             <text class="text-medium">Courses</text>
-            <text class="number">1,586</text>
+            <text class="number">{{ $courseCount }}</text>
         </div>
         <div class="d-flex flex-column align-items-center mx-md-5 px-xl-5 my-md-3">
             <text class="text-medium">Lessons</text>
-            <text class="number">2,689</text>
+            <text class="number">{{ $lessonCount }}</text>
         </div>
         <div class="d-flex flex-column align-items-center mx-md-5 px-xl-5 my-md-3 my-5">
             <text class="text-medium">
                 Learners
             </text>
             <text class="number">
-                16,882
+            {{ $userCount }}
             </text>
         </div>
     </div>

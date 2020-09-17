@@ -11,7 +11,7 @@
                 practice, peer support.
             </li>
             <li>
-                <a class="text-btn" href="#">Start Learning Now!</a>
+                <a class="text-btn" href="{{ Route('courses') }}">Start Learning Now!</a>
             </li>
         </ul>
     </section>

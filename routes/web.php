@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::get('/', 'HomeController@index')->name('index');
 
 Route::get('/admin', function () {
     return view('layouts.admin');
@@ -28,3 +26,5 @@ Route::get('/courses', 'CourseController@index')->name('courses');
 Route::get('/courses/{id}', 'CourseController@show')->name('course');
 
 Route::get('/courses/{courseId}/lesson/{lessonId}', 'CourseController@showLesson')->name('lesson');
+
+Route::post('/user-course', 'HomeController@createUserCourse')->name('user.courses');
